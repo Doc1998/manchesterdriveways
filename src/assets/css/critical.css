@@ -197,12 +197,6 @@
     background-attachment: fixed;
   }
 }
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #hero .cs-background:before {
-    opacity: 0.8;
-  }
-}
 /*-- -------------------------- -->
 <---          Services          -->
 <--- -------------------------- -*/
@@ -284,18 +278,5 @@
   }
   .services .card {
     max-width: 22.3125em;
-  }
-}
-/* Dark mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #services {
-    background: var(--medium);
-  }
-  body.dark-mode #services picture {
-    background: var(--primaryDark);
-  }
-  body.dark-mode #services h2 {
-    font-weight: bold;
-    color: #fff;
   }
 }
