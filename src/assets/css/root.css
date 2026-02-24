@@ -503,7 +503,6 @@
   }
   body.dark-mode #cs-navigation .cs-logo {
     /* makes it white */
-    filter: grayscale(1) brightness(1000%);
   }
   body.dark-mode #cs-navigation .cs-line {
     background-color: #fff;
@@ -823,7 +822,6 @@
   }
   body.dark-mode #cs-navigation .cs-logo {
     /* makes it turn white */
-    filter: grayscale(1) brightness(1000%);
   }
   body.dark-mode #cs-navigation .cs-li-link {
     color: var(--bodyTextColorWhite);
@@ -1056,7 +1054,6 @@
     height: 4em;
     width: auto;
     text-align: center;
-    filter: grayscale(1) brightness(1000%);
   }
   #footer .left-section .logo img {
     display: block;
@@ -1194,7 +1191,6 @@
     margin-left: 0;
     height: 6em;
     text-align: left;
-    filter: grayscale(1) brightness(1000%);
   }
   #footer .left-section p {
     margin-left: 0;
@@ -1248,6 +1244,5 @@
   }
   body.dark-mode #footer .logo {
     /* makes it white */
-    filter: grayscale(1) brightness(1000%);
   }
 }
