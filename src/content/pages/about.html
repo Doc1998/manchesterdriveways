@@ -1,0 +1,79 @@
+---
+title: 'About | All City Cleaning Services'
+description: ' Welcome to All City Cleaning Services, your premier choice for professional exterior Driveway & Patio cleaning in Ireland.'
+preloadImg: '/assets/images/ACCS.jpg'
+permalink: 'about/'
+eleventyNavigation:
+    key: About Us
+    order: 200
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/about.css">
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">About Us</h1>
+        <picture>
+            <source media="(max-width: 600px)" srcset="/assets/images/ACCS.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/ACCS.jpg">
+            <img aria-hidden="true" decoding="async" src="/assets/images/ACCS.jpg" alt="All City Cleaning Services" loading="eager" width="2500" height="1667">
+        </picture>
+
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 Side By Side                 -->
+    <!-- ============================================ -->
+
+    <section id="sbs">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-left">
+                <picture class="cs-picture cs-picture1">
+                    <source media="(max-width: 600px)" srcset="/assets/images/path.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/path.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/path.jpg" alt="path" loading="lazy" width="400" height="563">
+                </picture>
+                <picture class="cs-picture cs-picture2">
+                    <source media="(max-width: 600px)" srcset="/assets/images/house.jpeg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/house.jpeg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/house.jpeg" alt="house" loading="lazy" width="400" height="563">
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-right">
+                <span class="cs-topper">About Us</span>
+                <h2 class="cs-title">All City Cleaning Services</h2>
+                <p class="cs-text">
+                    Welcome to All City Cleaning Services, your premier choice for professional exterior Driveway & Patio cleaning in Ireland. With a commitment to excellence and a dedication to customer satisfaction, we pride ourselves on delivering top-notch cleaning solutions for your property’s exterior surfaces.
+                </p>
+                <p class="cs-text">
+                    At All City Cleaning Services, we understand the importance of maintaining the cleanliness and integrity of your property. Whether it’s your roof, gutter, driveway, patio, wall, or tarmac, our experienced team utilizes state-of-the-art equipment and proven techniques to ensure exceptional results every time.
+                </p>
+                <p class="cs-text">
+                   
+                </p>
+                <div class="cs-flex-group">
+                    <p class="cs-flex-p">
+                        What sets us apart is our unwavering focus on quality and customer care. We are fully insured, giving you peace of mind knowing that your property is in safe hands. Our team is highly trained and equipped to handle any cleaning challenge, no matter the size or complexity.
+                    </p>
+                    <span class="cs-name">Thomas Barry</span>
+                    <span class="cs-job">Founder</span>
+                    <img class="cs-quote-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg" alt="gavel" width="136" height="77">
+                </div>
+                <a href="/contact" class="cs-button-solid">Make A Booking</a>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/cta.html' %}
+
+{% endblock %}

@@ -1,0 +1,112 @@
+---
+title: 'Roof Cleaning | All City Cleaning Services'
+description: 'Eliminate moss and algae buildup with our professional roof cleaning service! Our skilled team thoroughly cleans your roof, removing all traces of growth to restore its clean, functional surface'
+preloadImg: '/assets/images/portfolio/port8.jpg'
+permalink: 'roof-cleaning/'
+eleventyNavigation:
+    key: Roof Cleaning
+    order: 3100
+    parent: Services
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css">
+{% endblock %}
+
+{% block body %}
+
+ <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">Roof Cleaning</h1>
+        <picture>
+            <source media="(max-width: 600px)" srcset="/assets/images/ACCS.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/ACCS.jpg">
+            <img aria-hidden="true" decoding="async" src="/assets/images/ACCS.jpg" alt="All City Cleaning Services" loading="eager" width="2500" height="1667">
+        </picture>
+
+    </section>
+      <!-- ============================================ -->
+    <!--                 Side By Side                 -->
+    <!-- ============================================ -->
+
+    <section id="sbs">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-left">
+                <picture class="cs-picture cs-picture1">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port7.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port7.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port7.jpg" alt="dirty roof" loading="lazy" width="400" height="563">
+                </picture>
+                <picture class="cs-picture cs-picture2">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port8.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port8.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port8.jpg" alt="roof cleaning completed job" loading="lazy" width="400" height="563">
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-right">
+                <span class="cs-topper">Roofing Cleaning</span>
+                <h2 class="cs-title">All City Roof Cleaning Services</h2>
+                <p class="cs-text">
+                    Eliminate moss and algae buildup with our professional roof cleaning service! Our skilled team thoroughly cleans your roof, removing all traces of growth to restore its clean, functional surface. This helps water flow freely, protects your home’s structure, and prevents blockages in your gutters. We customize our cleaning methods based on your roof type, using either a light touch or a more intensive approach as required.
+                </p>
+                <p class="cs-text">
+                    Maintaining a clean roof is essential for the longevity and aesthetics of your property. Our professional Roof painting and Roof Cleaning services in Waterford are designed to eliminate dirt, debris, and unsightly stains, leaving your roof looking fresh and revitalized. Using advanced equipment and eco-friendly solutions, we ensure thorough and efficient cleaning without causing any harm to your roofing materials.
+                </p>
+                <p class="cs-text">
+                    <b>Why Clean your roof?</b>
+                    A dirty roof, particularly one with moss or algae growth, can trap moisture over time. This excess moisture can infiltrate the fascia, soffit, and roof structure, leading to rot and deterioration. As these components weaken, the gutters attached to them may also suffer damage, potentially compromising the overall integrity of your roof system.s moisture exposure can lead to rot, deterioration, and damage to these components, ultimately affecting the gutters that are attached to them.
+                </p>
+                <a href="/contact" class="cs-button-solid">Make A Booking</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--            Extra Content To Rank             -->
+    <!-- ============================================ -->
+
+    <section id="sbs-r">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-left">
+                <picture class="cs-picture cs-picture1">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port1.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port1.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port1.jpg" alt="roof that need servicing" loading="lazy" width="400" height="560">
+                </picture>
+                <picture class="cs-picture cs-picture2">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port2.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port2.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port2.jpg" alt="Roof painting job" loading="lazy" width="400" height="560">
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-right">
+                <span class="cs-topper">Roofing Cleaning Services</span>
+                <h2 class="cs-title">Expert Roof Painting</h2>
+                <p class="cs-text">
+                    Our skilled team uses high-quality paints specifically designed for roofing materials to ensure durability and long-lasting color retention. From refreshing the existing color to completely changing the look, we deliver flawless results that not only beautify your property but also extend the life of your roof. 
+                </p>
+                <p class="cs-text">
+                        If you house has a tiled roof and the tiles have faded or you just want to change the colour of the tiles then a cheap and quick option would be to get them painted.
+    
+                        Painting will not only give your old tiles a fresh new look, it will also protect them from wear and tear, by forming protective layer coating on top of them.
+                </p>
+                <p class="cs-text">
+                    Contact us today to learn more about our roof painting services and give your home a stunning new look.
+                </p>
+                <a href="/contact" class="cs-button-solid">Schedule Roof Painting Service</a>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/cta.html' %}
+
+{% endblock %}

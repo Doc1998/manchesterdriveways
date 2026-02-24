@@ -1,0 +1,84 @@
+---
+title: 'Contact | All City Cleaning Services'
+description: 'Contact Us. Fill out our form and we will be in touch as soon as possible'
+preloadImg: '/assets/images/ACCS.jpg'
+permalink: 'contact/'
+eleventyNavigation:
+    key: Contact Us
+    order: 600
+    hideOnDesktop: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/contact.css">
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">Contact Us</h1>
+        <picture>
+        <source media="(max-width: 600px)" srcset="/assets/images/hero.webp">
+        <source media="(min-width: 601px)" srcset="/assets/images/hero.webp">
+        <img aria-hidden="true" decoding="async" src="/assets/images/hero.webp" alt="Manchester Driveways LTD" loading="lazy" width="2500" height="1667">
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                Contact Form                  -->
+    <!-- ============================================ -->
+
+    <section id="cs-contact">
+        <div class="cs-container">
+            <form id="cs-form" name="Contact Form" method="post" data-netlify="true">
+                <div class="cs-content">
+                    <span class="cs-topper">Contact</span>
+                    <h2 class="cs-title">Get in Touch</h2>
+                    <p class="cs-text">
+                        Fill out the form below to make a booking! We will be in touch as soon as possible
+                    </p>
+                </div>
+                <label>
+                    Name
+                    <input required type="text" id="name" name="name" placeholder="Name">
+                </label>
+                <label>
+                    Email
+                    <input required type="text" id="email" name="email" placeholder="Email">
+                </label>
+                <label>
+                    Phone
+                    <input required type="text" id="phone" name="phone" placeholder="Phone">
+                </label>
+                <label class="cs-label-message">
+                    Message
+                    <textarea required name="Message" id="message" placeholder="Write message..."></textarea>
+                </label>
+                <button class="cs-button-solid" type="submit">Submit Message</button>
+            </form>
+            <div class="cs-right-section">
+                <!--Email-->
+                <span class="cs-header" style="color: white;">Email</span>
+                <a class="cs-link" href="mailto:{{client.email}}" style="color: white;">{{client.email}}</a>
+                <!--Phone-->
+                <span class="cs-header" style="color: white;">Phone</span>
+                <a class="cs-link" href="tel:{{client.phoneForTel}}" style="color: white;">{{client.phoneFormatted}}</a>
+                <!--Address-->
+                </a>
+
+                <!-- Background Image-->
+                <picture class="cs-bg-picture">
+                    <source media="(min-width: 601px)" srcset="/assets/images/resin.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/resin.jpg" alt="resin driveway" loading="lazy" width="2500" height="1667">
+                </picture>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

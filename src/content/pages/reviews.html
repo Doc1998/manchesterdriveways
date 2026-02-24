@@ -1,0 +1,128 @@
+---
+title: 'Reviews | All City Cleaning Services'
+description: 'All City Cleaning Services. Check out our latest reviews from happy customers!'
+preloadImg: '/assets/images/ACCS.jpg'
+permalink: 'reviews/'
+eleventyNavigation:
+    key: Reviews
+    order: 400
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/reviews.css">
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">Our Reviews</h1>
+        <picture>
+            <source media="(max-width: 600px)" srcset="/assets/images/ACCS.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/ACCS.jpg">
+            <img aria-hidden="true" decoding="async" src="/assets/images/ACCS.jpg" alt="All City Cleaning Services" loading="eager" width="2500" height="1667">
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                  Reviews                     -->
+    <!-- ============================================ -->
+
+    <section id="reviews">
+        <div class="container">
+            <div class="review">
+                <picture>
+                    <img class="profile" loading="lazy" decoding="async" src="/assets/images/eanna.jpg" alt="" width="99" height="99">
+                </picture>
+                <p>
+                    Outstanding service! My roof looks brand new after their thorough cleaning. Very honest person, Highly recommend servicesexteriorsurfacecleaning.ie And thank you so much all guys..
+
+                </p>
+                <div class="star-group">
+                    <span class="name">Eanna<span class="desc">Homeowner</span></span>
+                    <picture>
+                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
+                    </picture>
+                </div>
+            </div>
+            <div class="review">
+                <picture>
+                    <img class="profile" loading="lazy" decoding="async" src="/assets/images/giorgi.jpg" alt="" width="99" height="99">
+                </picture>
+                <p>
+                    Highly satisfied with the service Thomas and his team provided they arrived on time and left the place spotless when finished Thomas is a man to his word our rooftop looks like new again highly recommend it.
+                </p>
+                <div class="star-group">
+                    <span class="name">Giorgi Salia<span class="desc">Homeowner</span></span>
+                    <picture>
+                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
+                    </picture>
+                </div>
+            </div>
+            <div class="review">
+                <picture>
+                    <img class="profile" loading="lazy" decoding="async" src="/assets/images/sarah.jpg" alt="" width="99" height="99">
+                </picture>
+                <p>
+                    Had our roofs cleaned today by and his team, I have to say it was great from start to finish, Thomas was quick to respond with a quote, having talked us through what we would receive, they did exactly that, a great job, they left our property spotless.
+                </p>
+                <div class="star-group">
+                    <span class="name">Sarah Parnell<span class="desc">Homeowner</span></span>
+                    <picture>
+                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
+                    </picture>
+                </div>
+            </div>
+            <div class="review">
+                <picture>
+                    <img class="profile" loading="lazy" decoding="async" src="/assets/images/marg.jpg" alt="" width="99" height="99">
+                </picture>
+                <p>
+                    Done a brilliant job would really recommend Thomas no messing anything we asked he done brilliant .
+                </p>
+                <div class="star-group">
+                    <span class="name">Margaret Kelly<span class="desc">Homeowner</span></span>
+                    <picture>
+                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
+                    </picture>
+                </div>
+            </div>
+            <div class="review">
+                <picture>
+                    <img class="profile" loading="lazy" decoding="async" src="/assets/images/brian.jpg" alt="" width="99" height="99">
+                </picture>
+                <p>
+                    Great job and excellent service from the minute I contacted them.
+                </p>
+                <div class="star-group">
+                    <span class="name">Brian Hogan<span class="desc">Homeowner</span></span>
+                    <picture>
+                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
+                    </picture>
+                </div>
+            </div>
+            <div class="review">
+                <picture>
+                    <img class="profile" loading="lazy" decoding="async" src="/assets/images/unnamed.png" alt="" width="99" height="99">
+                </picture>
+                <p>
+                    The service was outstanding. The team was professional, efficient, and left my roof looking like new. 
+                </p>
+                <div class="star-group">
+                    <span class="name">Steven Irish<span class="desc">Homeowner</span></span>
+                    <picture>
+                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/cta.html' %}
+
+{% endblock %}

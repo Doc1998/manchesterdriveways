@@ -1,0 +1,329 @@
+---
+title: 'Manchester Driveways LTD | Local Contractors'
+description: 'As a family-run company, we’re committed to delivering quality workmanship across Greater Manchester, and Cheshire.'
+preloadImg: '/assets/images/hero.webp'
+permalink: '/'
+tags: 'sitemap' # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
+eleventyNavigation:
+  key: Home
+  order: 100
+---
+
+{% extends "layouts/home-base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css"/>
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
+
+    <!-- Script for Netlify Identity -->
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script defer>
+        if (window.netlifyIdentity) {
+            window
+                .netlifyIdentity
+                .on('init', (user) => {
+                    if (!user) {
+                        window
+                            .netlifyIdentity
+                            .on('login', () => {
+                                document.location.href = '/admin/';
+                            });
+                    }
+                });
+        }
+    </script>
+
+    <!-- JSON Schema Markup -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "LocalBusiness",
+            "name": "{{ client.name }}",
+            {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
+            {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
+            {% if client.email %}"email": "{{ client.email }}",{% endif %}
+            {% if client.address %}
+                "address": {
+                    "@type": "PostalAddress"{% if client.address.lineOne %},
+                        "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
+                    {% endif %}
+                    {% if client.address.city %},
+                        "addressLocality": "{{ client.address.city }}"
+                    {% endif %}
+                    {% if client.address.state %},
+                        "addressRegion": "{{ client.address.state }}"
+                    {% endif %}
+                    {% if client.address.zip %},
+                        "postalCode": "{{ client.address.zip }}"
+                    {% endif %}
+                    {% if client.address.country %},
+                        "addressCountry": "{{ client.address.country }}"
+                    {% endif %}
+                },
+            {% endif %}
+            {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
+            {% if client.socials %}
+                "sameAs": [{% for platform, url in client.socials %}
+                        {% if not loop.first %},{% endif %}
+                        "{{ url }}"
+                    {% endfor %}]
+            {% endif %}
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+<!-- ══════════════════════════════════════════
+     3. HERO SECTION  (headline left, form right)
+══════════════════════════════════════════ -->
+<section class="hero" aria-labelledby="hero-heading">
+
+  <!-- Main two-column content -->
+  <div class="hero__inner">
+
+    <!-- LEFT: Headline, features, call CTA -->
+    <div class="hero__content">
+      <h1 class="hero__heading" id="hero-heading">
+        Driveways Manchester &amp; Surrounding Areas
+      </h1>
+
+      <ul class="hero__features" aria-label="Key benefits">
+        <li style="color: white;">Plenty of Happy Customers</li>
+        <li style="color: white;">Experienced &amp; Skilled Team</li>
+        <li style="color: white;">Work Fully Guaranteed</li>
+        <li style="color: white;">Trusted Local Contractors</li>
+      </ul>
+
+      <a href="tel:+447585551012" class="hero__cta">
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.05 1.23h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+        CALL US ON +44 7585 551012
+      </a>
+    </div>
+
+    <!-- RIGHT: Quote form card -->
+    <div class="hero__form-card" id="quote">
+      <h2 class="quote-form__heading">Fast Free Quotes</h2>
+      <hr class="quote-form__divider" aria-hidden="true">
+
+      <form class="quote-form" action="/contact/submit/" method="POST" novalidate>
+        <div class="form-field">
+          <label for="quote-name">Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="quote-name" name="name" placeholder="Name *" required autocomplete="name" aria-required="true">
+        </div>
+
+        <div class="form-field">
+          <label for="quote-email">Email <span aria-hidden="true">*</span></label>
+          <input type="email" id="quote-email" name="email" placeholder="Email *" required autocomplete="email" aria-required="true">
+        </div>
+
+        <div class="form-field">
+          <label for="quote-phone">Phone <span aria-hidden="true">*</span></label>
+          <input type="tel" id="quote-phone" name="phone" placeholder="Phone *" required autocomplete="tel" aria-required="true">
+        </div>
+
+        <div class="form-field">
+          <label for="quote-postcode">Postcode <span aria-hidden="true">*</span></label>
+          <input type="text" id="quote-postcode" name="postcode" placeholder="Postcode *" required autocomplete="postal-code" aria-required="true">
+        </div>
+
+        <div class="form-field">
+          <label for="quote-message">Your Message <span aria-hidden="true">*</span></label>
+          <textarea id="quote-message" name="message" placeholder="Your Message (required)" required aria-required="true" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="quote-form__submit">SUBMIT</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Google Rating Banner — sits at bottom of hero -->
+  <div class="hero__rating-bar" aria-label="Customer ratings">
+    <div class="hero__rating-bar__inner">
+      <span class="hero__rating-label">Rated Excellent By Our Customers</span>
+
+      <div class="hero__rating-divider" aria-hidden="true"></div>
+
+      <a href="https://google.com/maps" target="_blank" rel="noopener noreferrer" class="hero__rating-google" aria-label="See our Google reviews — 5 stars">
+        <span class="hero__rating-google__wordmark" aria-hidden="true">
+          <span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span>
+        </span>
+        <span class="hero__rating-stars" aria-label="5 stars">
+          <!-- 5 filled stars -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </span>
+        <span class="hero__rating-score">5.0</span>
+        <span class="hero__rating-count">(58+ reviews)</span>
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════
+     4. MAIN CONTENT — About column
+══════════════════════════════════════════ -->
+<section class="content-section" aria-label="About us">
+  <div class="container">
+    <div class="about">
+      <h2 class="about__heading">
+        Greater Manchester's Specialists in Driveways, Patios &amp; Professional Paving
+      </h2>
+      <p class="about__text">
+        At <a href="/about/">Manchester Driveways LTD</a>, we deliver dependable paving and landscaping services
+        throughout Greater Manchester and nearby areas. As a family-owned business with a team of skilled 
+        professionals and years of experience, we aim to complete every project to the highest standard 
+        of workmanship and service.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<section id="sbs">
+    <div class="cs-container">
+        <div class="cs-left">
+            <picture class="cs-picture cs-picture1">
+                <source media="(max-width: 600px)" srcset="/assets/images/block-paving.jpg">
+                <source media="(min-width: 601px)" srcset="/assets/images/block-paving.jpg">
+                <img aria-hidden="true" decoding="async" src="/assets/images/block-paving.jpg" alt="new driveway installation" loading="lazy" width="400" height="563">
+            </picture>
+            <picture class="cs-picture cs-picture2">
+                <source media="(max-width: 600px)" srcset="/assets/images/block-paving2.jpg">
+                <source media="(min-width: 601px)" srcset="/assets/images/block-paving2.jpg">
+                <img aria-hidden="true" decoding="async" src="/assets/images/block-paving2.jpg" alt="paving project" loading="lazy" width="400" height="563">
+            </picture>
+        </div>
+        <div class="cs-right">
+            <span class="cs-topper">About Us</span>
+            <h2 class="cs-title">Manchester Driveways LTD</h2>
+            <p class="cs-text">
+                Welcome to Manchester Driveways LTD, your premier choice for professional Driveway, Patio, and <a href="/paving-manchester">Block Paving</a> installations in Greater Manchester. With a commitment to excellence and a dedication to customer satisfaction, we pride ourselves on delivering top-notch paving solutions for your home’s exterior.
+            </p>
+            <p class="cs-text">
+                As a family-run company, we understand the importance of enhancing the kerb appeal and value of your property. Whether it’s a new driveway, a natural stone patio, or restoration work, our experienced team utilizes high-quality materials and proven techniques to ensure exceptional results every time.
+            </p>
+            <p class="cs-text">
+                
+            </p>
+            <div class="cs-flex-group">
+                <p class="cs-flex-p">
+                    What sets us apart is our unwavering focus on quality and customer care. We are fully insured, giving you peace of mind knowing that your home is in safe hands. Our team is highly trained and equipped to handle any landscaping challenge, no matter the size or complexity.
+                </p>
+                <span class="cs-name">The Manchester Driveways Team</span>
+                <span class="cs-job">Family Owned & Operated</span>
+                <img class="cs-quote-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg" alt="quote" width="136" height="77">
+            </div>
+            <a href="/contact" class="cs-button-solid">Get A Free Quote</a>
+        </div>
+    </div>
+</section>
+
+<section id="sbs-r">
+    <div class="cs-container">
+        <div class="cs-left">
+            <picture class="cs-picture cs-picture1">
+                <source media="(max-width: 600px)" srcset="/assets/images/block-paving3.jpg">
+                <source media="(min-width: 601px)" srcset="/assets/images/block-paving3.jpg">
+                <img aria-hidden="true" decoding="async" src="/assets/images/block-paving3.jpg" alt="driveway paving job" loading="lazy" width="400" height="560">
+            </picture>
+            <picture class="cs-picture cs-picture2">
+                <source media="(max-width: 600px)" srcset="/assets/images/resin.jpg">
+                <source media="(min-width: 601px)" srcset="/assets/images/resin.jpg">
+                <img aria-hidden="true" decoding="async" src="/assets/images/resin.jpg" alt="resin driveway" loading="lazy" width="400" height="560">
+            </picture>
+        </div>
+        <div class="cs-right">
+            <span class="cs-topper">Paving Services Manchester</span>
+            <h2 class="cs-title">Expert Patio & Driveway Installs</h2>
+            <p class="cs-text">
+                Manchester Driveways LTD is a trusted and professional paving contractor specializing in high-quality residential driveway installations and garden transformations.
+            </p>
+            <p class="cs-text">
+                Our team of experienced tradespeople is trained to meet the highest industry standards, ensuring every project is completed with exceptional craftsmanship and attention to detail. Using only premium materials, we handle everything from block paving and resin to Indian Stone patios, delivering results designed to stand the test of time.
+            </p>
+
+            <p class="cs-text">
+                We are committed to precision, reliability, and efficiency, making sure each job is carried out to meet your specific needs while exceeding expectations. At Manchester Driveways LTD, your satisfaction and the durability of your new surface are our priorities.
+            </p>
+            <a href="/contact" class="cs-button-solid">Book A Site Survey</a>
+        </div>
+    </div>
+</section>
+  
+
+<!-- ══════════════════════════════════════════
+     SECTION: What We Do
+══════════════════════════════════════════ -->
+<section class="wwd-section" aria-labelledby="wwd-title">
+
+  <!-- Section header -->
+  <p class="wwd-section__eyebrow">What We Do</p>
+  <h2 class="wwd-section__title" id="wwd-title">Your Local Driveway Experts</h2>
+  <p class="wwd-section__intro">
+    Don't settle for a worn-out or crumbling driveway. Choose us for
+    high-quality installations and repairs that boost your kerb appeal,
+    add value to your home, and last for decades.
+  </p>
+
+  <!-- Two-column cards -->
+  <div class="wwd-grid">
+
+    <!-- Card 1: Choosing a contractor -->
+    <article class="wwd-card">
+      <div class="wwd-card__img-wrap">
+        <img
+          src="assets/images/block-paving3.jpg"
+          alt="Tradesmen laying a new block paving driveway"
+          width="540"
+          height="338"
+          loading="lazy"
+        >
+      </div>
+
+      <h3 class="wwd-card__heading">What should I look for in a driveway contractor?</h3>
+      <div class="wwd-card__accent" aria-hidden="true"></div>
+
+      <ul class="wwd-card__list">
+        <li><strong>Experience &amp; Reputation</strong>: Choose a contractor with a solid track record in driveway installations and repairs.</li>
+        <li><strong>Fully Insured</strong>: Ensure the contractor carries public liability insurance to protect your property.</li>
+        <li><strong>Detailed Written Quotes</strong>: Obtain itemised quotes so you know exactly what's included — no hidden costs.</li>
+        <li><strong>References &amp; Reviews</strong>: Check Google reviews and ask for photos of completed jobs to gauge quality.</li>
+        <li><strong>Material Guarantees</strong>: A reputable contractor will back their work with a written workmanship guarantee.</li>
+      </ul>
+    </article>
+
+    <!-- Card 2: Best driveway materials -->
+    <article class="wwd-card">
+      <div class="wwd-card__img-wrap">
+        <img
+          src="/assets/images/block-paving.jpg"
+          alt="Close-up of a freshly laid resin bound driveway surface"
+          width="540"
+          height="338"
+          loading="lazy"
+        >
+      </div>
+
+      <h3 class="wwd-card__heading">What driveway materials are best for UK homes?</h3>
+      <div class="wwd-card__accent" aria-hidden="true"></div>
+
+      <ul class="wwd-card__list">
+        <li><strong>Block Paving</strong>: Versatile, attractive, and easy to repair — one of the most popular choices in the UK.</li>
+        <li><strong>Resin Bound</strong>: A smooth, permeable finish that meets SuDS regulations and requires minimal maintenance.</li>
+        <li><strong>Tarmac / Asphalt</strong>: A cost-effective, durable surface ideal for larger driveways and quick installation.</li>
+        <li><strong>Pattern Imprinted Concrete</strong>: Mimics the look of stone or brick at a lower cost, with a long lifespan.</li>
+        <li><strong>Gravel</strong>: An affordable, permeable option that's easy to install and acts as a natural deterrent.</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+                                
+
+    {% include 'components/cta.html' %}
+{% endblock %}

@@ -1,0 +1,117 @@
+---
+title: 'Service Areas | All City Cleaning Services'
+description: 'All City Cleaning service locations'
+preloadImg: '/assets/images/portfolio/port8.jpg'
+permalink: 'service-locations/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css">
+{% endblock %}
+
+{% block body %}
+<!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-1400">
+    <div class="cs-container">
+        <span class="cs-int-title">Service Locations</span>
+        <div class="cs-breadcrumbs">
+            <a href="/" class="cs-link">Home</a>
+            <a href="/service-locations" class="cs-link cs-active">Service Locations</a>
+        </div>
+    </div>
+    
+    <!--Background Image-->
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="/assets/images/Coders-Small.webp">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="/assets/images/Coders-Med.webp">
+        <img decoding="async" src="/assets/images/Coders-Med.webp" alt="coders" width="1280" height="568" aria-hidden="true">
+    </picture>
+</div>
+<!-- ============================================ -->
+<!--                  Collection                  -->
+<!-- ============================================ -->
+
+<section id="collection-1579">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Service Locations</span>
+            <h2 class="cs-title">All City Cleaning Service Locations</h2>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a href="/roof-cleaning-kildare" class="cs-link">
+                    <picture class="cs-picture" aria-hidden="true">
+                        <source media="(max-width: 600px)"
+                                srcset="/assets/images/RCKildare.webp">
+                        <source media="(min-width: 601px)"
+                                srcset="/assets/images/RCKildare.webp">
+                        <img loading="lazy" decoding="async"
+                                src="/assets/images/RCKildare.webp"
+                                width="365" height="201" alt="roof cleaning kildare">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-category">Kildare</span>
+                        <span class="cs-quantity">Roof Cleaning</span>
+                    </div>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="/roof-cleaning-wexford" class="cs-link">
+                    <picture class="cs-picture" aria-hidden="true">
+                        <source media="(max-width: 600px)"
+                                srcset="/assets/images/RCWexford.webp">
+                        <source media="(min-width: 601px)"
+                                srcset="/assets/images/RCWexford.webp">
+                        <img loading="lazy" decoding="async"
+                                src="/assets/images/RCWexford.webp"
+                                width="365" height="201" alt="roof cleaning Wexford">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-category">Wexford</span>
+                        <span class="cs-quantity">Roof Cleaning</span>
+                    </div>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="/gutter-cleaning-waterford" class="cs-link">
+                    <picture class="cs-picture" aria-hidden="true">
+                        <source media="(max-width: 600px)"
+                                srcset="/assets/images/GCWaterford.webp">
+                        <source media="(min-width: 601px)"
+                                srcset="/assets/images/GCWaterford.webp">
+                        <img loading="lazy" decoding="async"
+                                src="/assets/images/GCWaterford.webp"
+                                width="365" height="201" alt="gutter cleaning waterford">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-category">Waterford</span>
+                        <span class="cs-quantity">Gutter Cleaning</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+{% include 'components/cta.html' %}
+
+{% endblock %}
+
+                                
+                                
+                              
+
+
+                                
+                              
