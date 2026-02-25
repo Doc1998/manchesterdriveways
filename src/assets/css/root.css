@@ -5,15 +5,21 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0rem) {
   :root {
-    --primary: #f5c800;
-    --yellow: #f5c800;
-    --dark: #111111;
+    --primary: #1a56db;
+    --blue: #1a56db;
+    --blue-dark: #1e429f;
+    --dark: #0f0f0f;
+    --mid: #1e1e1e;
     --white: #ffffff;
-    --grey-bg: #f4f4f4;
-    --border: #ddd;
+    --off-white: #f7f6f2;
+    --text: #2c2c2c;
+    --text-light: #666;
+    --border: #e0e0e0;
     --font-body: 'Georgia', serif;
     --font-ui: 'Arial', sans-serif;
+    --font-ui: system-ui, sans-serif;
     --container: 1080px;
+    --radius: 8px;
   }
   .cs-topper {
     display: block;
@@ -57,7 +63,7 @@
     font-size: 1rem;
     line-height: 3.125em;
     font-weight: bold;
-    color: #000;
+    color: white;
     transition: color 0.3s;
     transition-delay: 0.1s;
     text-align: center;
@@ -1163,7 +1169,7 @@
   left: 0;
   right: 0;
   background: var(--white);
-  border-top: 3px solid var(--yellow);
+  border-top: 3px solid var(--blue);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
   z-index: 200;
   overflow: hidden;
@@ -1196,7 +1202,7 @@
 }
 .mobile-nav__list a:hover,
 .mobile-nav__list a[aria-current="page"] {
-  background: var(--yellow);
+  background: var(--blue);
 }
 .mobile-nav__cta {
   display: block;
@@ -1238,7 +1244,7 @@
      1. TOP BAR
   ────────────────────────────────────────── */
 .top-bar {
-  background: var(--yellow);
+  background: var(--blue);
   padding: 0.45rem 1.25rem;
 }
 .top-bar__inner {
@@ -1329,7 +1335,7 @@
 }
 .site-nav__list a:hover,
 .site-nav__list a[aria-current="page"] {
-  background: var(--yellow);
+  background: var(--blue);
   color: var(--dark);
 }
 .site-header__cta {
