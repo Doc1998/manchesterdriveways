@@ -1,0 +1,1864 @@
+---
+title: 'Resin Bound Driveways Manchester'
+description: 'Expert resin bound driveway installation across Manchester. Fully permeable, low-maintenance resin driveways for homes across Greater Manchester. Free no-obligation quote — call +447585510120.'
+preloadImg: '/assets/images/resin.jpg'
+permalink: 'resin-bound-driveways-manchester/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css">
+{% endblock %}
+
+{% block body %}
+<!-- Schema.org LocalBusiness — rendered in <head> via layout -->
+
+
+{% set schemaLocal %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Driveways",
+  "name": "Manchester Driveways LTD",
+  "description": "Specialist resin bound driveway installation across Manchester and Greater Manchester.",
+  "url": "https://manchesterdrivewaysltd.co.uk",
+  "telephone": "+447585510120",
+  "areaServed": [
+    {"@type": "City",  "name": "Manchester"},
+    {"@type": "Place", "name": "Salford"},
+    {"@type": "Place", "name": "Trafford"},
+    {"@type": "Place", "name": "Didsbury"},
+    {"@type": "Place", "name": "Chorlton"},
+    {"@type": "Place", "name": "Sale"},
+    {"@type": "Place", "name": "Altrincham"},
+    {"@type": "Place", "name": "Stretford"},
+    {"@type": "Place", "name": "Withington"},
+    {"@type": "Place", "name": "Wythenshawe"}
+  ],
+  "serviceType": ["Resin Bound Driveways", "Resin Bound Paving", "Permeable Driveways"],
+  "priceRange": "££"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do resin driveways cost in Manchester?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Resin bound driveways in Manchester typically cost between £40 and £80 per square metre depending on size, aggregate chosen, and any groundwork required. A typical 40m² driveway costs £1,600–£3,200. We provide free detailed quotes for all Manchester properties."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do resin driveways need planning permission in Manchester?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Resin bound surfaces are fully permeable so they comply with Manchester City Council's SuDS drainage requirements and generally do not require planning permission under Permitted Development rights."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do resin driveways last in Manchester?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A professionally installed resin bound driveway typically lasts 15–25 years. UV-stable resin won't yellow or crack, and the surface resists frost, weeds and oil stains. We back all Manchester installations with a 10-year workmanship guarantee."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does resin driveway installation take in Manchester?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most resin bound driveways in Manchester are completed in a single day. The surface can be walked on within hours and is ready for vehicles within 24 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a resin driveway be installed over existing tarmac in Manchester?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In many cases yes — resin bound can be laid over a sound, stable existing tarmac or concrete base, reducing cost and installation time. We assess this during your free site visit and give honest advice on whether overlay or full installation is best for your Manchester property."
+      }
+    }
+  ]
+}
+</script>
+{% endset %}
+
+<!-- ============================================================
+     Resin Driveways Manchester — 11ty Partial
+     NEW HERO: Split-screen architectural layout
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+  /* ══════════════════════════════════════════
+     DESIGN TOKENS
+  ══════════════════════════════════════════ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue:        #1a56db;
+    --blue-dark:   #1e429f;
+    --blue-light:  #e8effe;
+    --dark:        #0a0a0f;
+    --dark-2:      #13131a;
+    --white:       #ffffff;
+    --off-white:   #f7f6f2;
+    --text:        #2c2c2c;
+    --text-light:  #666;
+    --border:      #e0e0e0;
+    --font-display:'Barlow Condensed', sans-serif;
+    --font-body:   "Roboto", Arial, sans-serif;
+    --font-ui:     system-ui, sans-serif;
+    --container:   1080px;
+    --radius:      8px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); color: var(--text); background: var(--white); }
+
+  .container {
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  /* ══════════════════════════════════════════
+     HERO — SPLIT SCREEN
+     Left: dark panel with large type + form
+     Right: full-bleed image with diagonal clip
+  ══════════════════════════════════════════ */
+  .hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* ── Left dark panel ── */
+  .hero-split__left {
+    background: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 3.5rem 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  /* Subtle animated grid texture on dark panel */
+  .hero-split__left::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(26,86,219,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,86,219,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: grid-drift 20s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes grid-drift {
+    0%   { background-position: 0 0; }
+    100% { background-position: 40px 40px; }
+  }
+
+  /* Blue glow blob */
+  .hero-split__left::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(26,86,219,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-split__left-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 520px;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    list-style: none;
+    margin-bottom: 2.5rem;
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: var(--blue); }
+  .breadcrumb li + li::before { content: '/'; margin-right: 0.4rem; opacity: 0.3; }
+
+  /* Location pill */
+  .hero-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(26,86,219,0.15);
+    border: 1px solid rgba(26,86,219,0.4);
+    color: #7ba8f7;
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 3px;
+    margin-bottom: 1.5rem;
+    animation: fade-up 0.6s ease both;
+  }
+
+  .hero-location svg { width: 10px; height: 10px; flex-shrink: 0; }
+
+  /* Giant display title */
+  .hero-split__title {
+    font-family: var(--font-display);
+    font-size: clamp(3.2rem, 5.5vw, 5.2rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.75rem;
+    animation: fade-up 0.6s ease 0.1s both;
+  }
+
+  .hero-split__title .line-accent {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--blue);
+    display: block;
+  }
+
+  .hero-split__title .line-solid {
+    display: block;
+  }
+
+  /* Vertical rule + descriptor */
+  .hero-descriptor {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2.25rem;
+    animation: fade-up 0.6s ease 0.2s both;
+  }
+
+  .hero-descriptor__rule {
+    width: 3px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--blue), transparent);
+    flex-shrink: 0;
+    margin-top: 4px;
+    border-radius: 2px;
+  }
+
+  .hero-descriptor p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* Trust row */
+  .hero-trust-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-bottom: 2.5rem;
+    animation: fade-up 0.6s ease 0.3s both;
+  }
+
+  .hero-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .hero-trust-item__dot {
+    width: 6px;
+    height: 6px;
+    background: var(--blue);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* CTA buttons */
+  .hero-ctas {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    animation: fade-up 0.6s ease 0.4s both;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.85rem 1.5rem;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: rgba(255,255,255,0.75);
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    padding: 0.85rem 1.25rem;
+    border-radius: 3px;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+
+  /* ── Right image panel ── */
+  .hero-split__right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-split__right img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Diagonal clip on the left edge of the image panel */
+  .hero-split__right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 120px;
+    height: 100%;
+    background: var(--dark);
+    clip-path: polygon(0 0, 100% 0, 60% 100%, 0 100%);
+    z-index: 1;
+  }
+
+  /* Dark gradient on right edge for readability */
+  .hero-split__right::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to left, transparent 60%, rgba(10,10,15,0.3) 100%);
+    z-index: 0;
+  }
+
+  /* Floating review badge on image */
+  .hero-review-badge {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2rem;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    z-index: 2;
+    text-align: center;
+    animation: fade-up 0.7s ease 0.5s both;
+  }
+
+  .hero-review-badge__stars {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 0.35rem;
+  }
+
+  .hero-review-badge__stars svg {
+    width: 14px;
+    height: 14px;
+    fill: #f5c800;
+  }
+
+  .hero-review-badge__score {
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    display: block;
+  }
+
+  .hero-review-badge__label {
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.5);
+    display: block;
+    margin-top: 0.25rem;
+  }
+
+  .google-word {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 900;
+    margin-top: 0.3rem;
+    display: block;
+  }
+  .g1{color:#4285F4}.g2{color:#EA4335}.g3{color:#FBBC05}
+  .g4{color:#4285F4}.g5{color:#34A853}.g6{color:#EA4335}
+
+  /* Floating "Installed in a day" tag on image */
+  .hero-img-tag {
+    position: absolute;
+    top: 2.5rem;
+    right: 2rem;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.5rem 0.85rem;
+    border-radius: 3px;
+    z-index: 2;
+    animation: fade-up 0.6s ease 0.6s both;
+  }
+
+  /* Animations */
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ══════════════════════════════════════════
+     STATS BAR
+  ══════════════════════════════════════════ */
+  .stats-bar { background: var(--blue); padding: 1rem 1.5rem; }
+
+  .stats-bar__inner {
+    max-width: var(--container);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .stat { text-align: center; }
+
+  .stat__number {
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--white);
+  }
+
+  .stat__label {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: rgba(255,255,255,0.75);
+    margin-top: 0.1rem;
+  }
+
+  .stat-sep { width: 1px; height: 40px; background: rgba(255,255,255,0.25); }
+
+  /* ══════════════════════════════════════════
+     SHARED SECTION STYLES
+  ══════════════════════════════════════════ */
+  .section-eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+
+  .section-lead {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    max-width: 680px;
+  }
+
+  .check-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--dark);
+  }
+
+  .check-list li::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: var(--blue);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 1px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    background-size: 11px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* ══════════════════════════════════════════
+     INLINE QUOTE FORM (below hero on mobile,
+     sits in a contained section on desktop)
+  ══════════════════════════════════════════ */
+  .quote-section {
+    background: var(--dark-2);
+    padding-block: 4rem;
+  }
+
+  .quote-section__inner {
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .quote-section__copy h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.0;
+    margin-bottom: 1rem;
+  }
+
+  .quote-section__copy h2 em {
+    color: var(--blue);
+    font-style: normal;
+  }
+
+  .quote-section__copy p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 1.25rem;
+  }
+
+  .quote-section__copy .mini-trust {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .quote-section__copy .mini-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.65);
+  }
+
+  .mini-trust-item__icon {
+    width: 28px;
+    height: 28px;
+    background: rgba(26,86,219,0.2);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .mini-trust-item__icon svg {
+    width: 14px;
+    height: 14px;
+    color: var(--blue);
+  }
+
+  /* Form card */
+  .quote-form-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+
+  .quote-form-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .quote-form-card__header h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+  }
+
+  .quote-form-card__badge {
+    background: rgba(26,86,219,0.1);
+    color: var(--blue-dark);
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .form-row { display: flex; flex-direction: column; gap: 0.6rem; }
+  .form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+
+  .form-field { display: flex; flex-direction: column; gap: 0.2rem; }
+
+  .form-field label {
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #666;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    border: 1.5px solid var(--border);
+    border-radius: 5px;
+    padding: 0.55rem 0.8rem;
+    font-family: var(--font-ui);
+    font-size: 0.88rem;
+    color: var(--dark);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(26,86,219,0.15);
+  }
+
+  .form-field textarea { min-height: 65px; resize: vertical; }
+
+  .form-submit {
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-ui);
+    font-size: 0.88rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    padding: 0.85rem;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 0.25rem;
+    transition: background 0.2s;
+  }
+
+  .form-submit:hover { background: var(--blue-dark); }
+
+  .form-disclaimer {
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    color: #999;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  /* ══════════════════════════════════════════
+     INTRO SECTION
+  ══════════════════════════════════════════ */
+  .intro-section { padding-block: 5rem; background: var(--white); }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3.5rem;
+  }
+
+  .intro-img { position: relative; }
+
+  .intro-img img {
+    width: 100%;
+    border-radius: var(--radius);
+    display: block;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+
+  .intro-img__badge {
+    position: absolute;
+    bottom: -1.25rem;
+    right: -1.25rem;
+    background: var(--blue);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  .intro-img__badge strong {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 900;
+    display: block;
+    line-height: 1;
+    color: var(--white);
+  }
+
+  .intro-img__badge span {
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .intro-content h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+
+  .intro-content p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+
+  .intro-content strong { color: var(--dark); font-weight: 600; }
+
+  /* ══════════════════════════════════════════
+     BENEFITS GRID
+  ══════════════════════════════════════════ */
+  .benefits-section { background: var(--off-white); padding-block: 5rem; }
+
+  .benefits-section .section-header { text-align: center; margin-bottom: 3rem; }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .benefit-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.75rem 1.5rem;
+    border: 1px solid var(--border);
+    transition: transform 0.25s, box-shadow 0.25s;
+    text-align: center;
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  }
+
+  .benefit-card__icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(26,86,219,0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+  }
+
+  .benefit-card__icon svg { width: 24px; height: 24px; color: var(--blue); }
+
+  .benefit-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .benefit-card p {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--text-light);
+  }
+
+  /* ══════════════════════════════════════════
+     PROCESS
+  ══════════════════════════════════════════ */
+  .process-section { padding-block: 5rem; background: var(--white); }
+
+  .process-section .section-header { text-align: center; margin-bottom: 3.5rem; }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 27px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 2px;
+    background: var(--border);
+    z-index: 0;
+  }
+
+  .process-step { text-align: center; padding: 0 1rem; position: relative; z-index: 1; }
+
+  .process-step__num {
+    width: 54px;
+    height: 54px;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 900;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.1rem;
+    border: 4px solid var(--white);
+    box-shadow: 0 0 0 2px var(--blue);
+  }
+
+  .process-step h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 0.4rem;
+  }
+
+  .process-step p {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: var(--text-light);
+  }
+
+  /* ══════════════════════════════════════════
+     LOCAL SEO COPY + SIDEBAR
+  ══════════════════════════════════════════ */
+  .local-section { padding-block: 5rem; background: var(--off-white); }
+
+  .local-section__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .local-copy h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+
+  .local-copy h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-top: 2rem;
+    margin-bottom: 0.65rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--blue);
+    display: inline-block;
+  }
+
+  .local-copy p {
+    font-family: var(--font-body);
+    font-size: 0.97rem;
+    line-height: 1.85;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+
+  .local-copy strong { color: var(--dark); font-weight: 600; }
+
+  .areas-sidebar {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    border: 1px solid var(--border);
+    position: sticky;
+    top: 1.5rem;
+  }
+
+  .areas-sidebar h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--blue);
+  }
+
+  .areas-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem;
+  }
+
+  .areas-list li {
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .areas-list li::before { content: '›'; color: var(--blue); font-weight: 900; font-size: 1rem; }
+
+  .postcodes-box {
+    margin-top: 1.25rem;
+    background: var(--dark);
+    border-radius: 6px;
+    padding: 1rem;
+  }
+
+  .postcodes-box > p {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 0.5rem;
+  }
+
+  .codes { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+  .postcode-tag {
+    background: rgba(26,86,219,0.15);
+    border: 1px solid rgba(26,86,219,0.3);
+    color: #7ba8f7;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .sidebar-cta {
+    display: block;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.85rem;
+    border-radius: 6px;
+    margin-top: 1.25rem;
+    transition: background 0.2s;
+  }
+
+  .sidebar-cta:hover { background: var(--blue-dark); }
+
+  .related-sidebar {
+    margin-top: 1.5rem;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+  }
+
+  .related-sidebar h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--blue);
+  }
+
+  .related-sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .related-sidebar ul li a {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--blue-dark);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: gap 0.15s;
+  }
+
+  .related-sidebar ul li a::before { content: '→'; font-size: 0.8rem; }
+  .related-sidebar ul li a:hover { gap: 0.5rem; }
+
+  /* ══════════════════════════════════════════
+     FAQ
+  ══════════════════════════════════════════ */
+  .faq-section { background: var(--dark); padding-block: 5rem; color: var(--white); }
+  .faq-section .section-eyebrow { color: var(--blue); }
+  .faq-section .section-title { color: var(--white); }
+  .faq-section .section-header { text-align: center; margin-bottom: 3rem; }
+
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .faq-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .faq-item summary {
+    padding: 1.1rem 1.25rem;
+    font-family: var(--font-ui);
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--white);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    transition: background 0.2s;
+  }
+
+  .faq-item summary:hover { background: rgba(255,255,255,0.04); }
+
+  .faq-item summary::after {
+    content: '+';
+    font-size: 1.25rem;
+    color: var(--blue);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item[open] summary { border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+  .faq-answer {
+    padding: 1rem 1.25rem;
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* ══════════════════════════════════════════
+     CTA BANNER
+  ══════════════════════════════════════════ */
+  .cta-banner { background: var(--blue); padding-block: 4rem; text-align: center; }
+
+  .cta-banner h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-banner p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: rgba(255,255,255,0.82);
+    margin-bottom: 2rem;
+  }
+
+  .btn-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--dark);
+    color: var(--white);
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: var(--radius);
+    transition: background 0.2s;
+  }
+
+  .btn-dark:hover { background: #222; }
+
+  /* ══════════════════════════════════════════
+     RESPONSIVE
+  ══════════════════════════════════════════ */
+  @media (max-width: 960px) {
+    .hero-split { grid-template-columns: 1fr; min-height: auto; }
+    .hero-split__left { padding: 3rem 1.5rem; }
+    .hero-split__left-inner { max-width: 100%; }
+    .hero-split__right { height: 55vw; min-height: 300px; }
+    .hero-split__right::before { display: none; }
+    .quote-section__inner { grid-template-columns: 1fr; gap: 2rem; }
+    .benefits-grid { grid-template-columns: 1fr 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .process-steps::before { display: none; }
+    .local-section__grid { grid-template-columns: 1fr; }
+    .areas-sidebar { position: static; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .stat-sep { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .hero-split__title { font-size: 3rem; }
+    .intro-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .intro-img__badge { right: 0; bottom: -1rem; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; }
+    .form-2col { grid-template-columns: 1fr; }
+    .hero-review-badge { bottom: 1rem; right: 1rem; }
+    .hero-img-tag { top: 1rem; right: 1rem; }
+  }
+</style>
+
+<!-- ══════════════════════════════════════════
+     HERO — SPLIT SCREEN
+══════════════════════════════════════════ -->
+<section aria-labelledby="hero-h1">
+
+  <div class="hero-split">
+
+    <!-- LEFT: Dark typographic panel -->
+    <div class="hero-split__left">
+      <div class="hero-split__left-inner">
+
+        <!-- Breadcrumb -->
+        <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+            <meta itemprop="position" content="1">
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/" itemprop="item"><span itemprop="name">Driveways Manchester</span></a>
+            <meta itemprop="position" content="2">
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">Resin Driveways</span>
+            <meta itemprop="position" content="3">
+          </li>
+        </ol>
+
+        <!-- Location pill -->
+        <div class="hero-location" aria-label="Serving Greater Manchester">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Greater Manchester
+        </div>
+
+        <!-- Title -->
+        <h1 class="hero-split__title" id="hero-h1">
+          <span class="line-solid">Resin</span>
+          <span class="line-solid">Driveways</span>
+          <span class="line-accent">Manchester</span>
+        </h1>
+
+        <!-- Descriptor -->
+        <div class="hero-descriptor">
+          <div class="hero-descriptor__rule" aria-hidden="true"></div>
+          <p>
+            Seamless, permeable resin bound surfaces installed across
+            Manchester and Greater Manchester. UV-stable, weed-resistant,
+            and ready in a single day.
+          </p>
+        </div>
+
+        <!-- Trust signals -->
+        <div class="hero-trust-row" role="list" aria-label="Key benefits">
+          <div class="hero-trust-item" role="listitem">
+            <div class="hero-trust-item__dot" aria-hidden="true"></div>
+            Fully permeable — no planning permission needed
+          </div>
+          <div class="hero-trust-item" role="listitem">
+            <div class="hero-trust-item__dot" aria-hidden="true"></div>
+            Most driveways completed in a single day
+          </div>
+          <div class="hero-trust-item" role="listitem">
+            <div class="hero-trust-item__dot" aria-hidden="true"></div>
+            10-year workmanship guarantee
+          </div>
+          <div class="hero-trust-item" role="listitem">
+            <div class="hero-trust-item__dot" aria-hidden="true"></div>
+            Free no-obligation quote — response within 2 hours
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="hero-ctas">
+          <a href="/contact/" class="btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Get a Free Quote
+          </a>
+          <a href="tel:+447585510120" class="btn-ghost">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.05 1.23h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+            +44 7585 510120
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT: Full-bleed image -->
+    <div class="hero-split__right" role="img" aria-label="Resin bound driveway installed in Manchester">
+      <img
+        src="/assets/images/resin.jpg"
+        alt="Smooth resin bound driveway on a Manchester home"
+        width="800"
+        height="900"
+        fetchpriority="high"
+      >
+
+      <!-- Floating "installed in a day" tag -->
+      <div class="hero-img-tag" aria-hidden="true">
+        ⚡ Installed in a Day
+      </div>
+
+      <!-- Floating Google review badge -->
+      <a href="https://g.page/your-business" target="_blank" rel="noopener noreferrer" class="hero-review-badge" aria-label="Google reviews — 5 stars, 58 reviews">
+        <div class="hero-review-badge__stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <span class="hero-review-badge__score">5.0</span>
+        <span class="hero-review-badge__label">58 Google Reviews</span>
+        <span class="google-word"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     STATS BAR
+══════════════════════════════════════════ -->
+<div class="stats-bar" aria-label="Key statistics">
+  <div class="stats-bar__inner">
+    <div class="stat">
+      <div class="stat__number">58+</div>
+      <div class="stat__label">Google Reviews</div>
+    </div>
+    <div class="stat-sep" aria-hidden="true"></div>
+    <div class="stat">
+      <div class="stat__number">1 Day</div>
+      <div class="stat__label">Typical Install Time</div>
+    </div>
+    <div class="stat-sep" aria-hidden="true"></div>
+    <div class="stat">
+      <div class="stat__number">15–25yr</div>
+      <div class="stat__label">Lifespan</div>
+    </div>
+    <div class="stat-sep" aria-hidden="true"></div>
+    <div class="stat">
+      <div class="stat__number">20+</div>
+      <div class="stat__label">Colours Available</div>
+    </div>
+    <div class="stat-sep" aria-hidden="true"></div>
+    <div class="stat">
+      <div class="stat__number">10yr</div>
+      <div class="stat__label">Guarantee</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     QUOTE SECTION (replaces hero form on desktop)
+══════════════════════════════════════════ -->
+<section class="quote-section" id="quote" aria-labelledby="quote-heading">
+  <div class="quote-section__inner">
+
+    <div class="quote-section__copy">
+      <p class="section-eyebrow" style="color: rgba(255,255,255,0.4);">Manchester's Resin Specialists</p>
+      <h2 id="quote-heading">Get Your <em>Free</em> Resin Driveway Quote</h2>
+      <p>
+        We cover all of Greater Manchester — from Didsbury and Chorlton to Sale,
+        Altrincham, Stretford and beyond. Tell us about your project and we'll get
+        back to you within 2 hours with honest, transparent pricing.
+      </p>
+      <div class="mini-trust">
+        <div class="mini-trust-item">
+          <div class="mini-trust-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          No obligation — free site survey included
+        </div>
+        <div class="mini-trust-item">
+          <div class="mini-trust-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          Fully insured — public liability covered
+        </div>
+        <div class="mini-trust-item">
+          <div class="mini-trust-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          Response within 2 hours on weekdays
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-form-card">
+      <div class="quote-form-card__header">
+        <h3>Free Quote</h3>
+        <span class="quote-form-card__badge">No Obligation</span>
+      </div>
+
+      <form class="form-row" action="/contact/" method="POST" novalidate>
+        <div class="form-2col">
+          <div class="form-field">
+            <label for="q-name">Your Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="q-name" name="name" placeholder="John Smith" required autocomplete="name" aria-required="true">
+          </div>
+          <div class="form-field">
+            <label for="q-phone">Phone Number <span aria-hidden="true">*</span></label>
+            <input type="tel" id="q-phone" name="phone" placeholder="07XXX XXXXXX" required autocomplete="tel" aria-required="true">
+          </div>
+        </div>
+        <div class="form-2col">
+          <div class="form-field">
+            <label for="q-postcode">Postcode <span aria-hidden="true">*</span></label>
+            <input type="text" id="q-postcode" name="postcode" placeholder="M1, M20, M33…" required autocomplete="postal-code" aria-required="true">
+          </div>
+          <div class="form-field">
+            <label for="q-size">Approx. Size</label>
+            <select id="q-size" name="size">
+              <option value="" disabled selected>Select…</option>
+              <option value="small">Up to 20m²</option>
+              <option value="medium">20–50m²</option>
+              <option value="large">50m²+</option>
+              <option value="unsure">Not Sure</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="q-message">Any Other Details?</label>
+          <textarea id="q-message" name="message" placeholder="Existing surface, preferred colour, access notes…" rows="3"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Get My Free Resin Quote →</button>
+        <p class="form-disclaimer">We never share your details. By submitting you agree to be contacted about your enquiry.</p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     INTRO
+══════════════════════════════════════════ -->
+<section class="intro-section" aria-labelledby="intro-heading">
+  <div class="container">
+    <div class="intro-grid">
+
+      <div class="intro-img">
+        <img
+          src="/assets/images/resin2.webp"
+          alt="Resin bound driveway being installed on a Manchester property"
+          width="560"
+          height="420"
+          loading="lazy"
+        >
+        <div class="intro-img__badge" aria-label="Fully SuDS compliant">
+          <strong>100%</strong>
+          <span>Permeable<br>SuDS Compliant</span>
+        </div>
+      </div>
+
+      <div class="intro-content">
+        <p class="section-eyebrow">Resin Bound Specialists</p>
+        <h2 id="intro-heading">Why Manchester Homeowners Choose Resin Bound Driveways</h2>
+
+        <p>
+          <strong>Resin bound driveways</strong> have become one of the most popular surfacing
+          choices for Manchester homeowners — and it's easy to see why. A mixture of UV-stable
+          polyurethane resin and natural aggregate is hand-trowelled onto a prepared base to
+          create a smooth, seamless surface that looks premium, performs brilliantly, and asks
+          almost nothing of you in terms of maintenance.
+        </p>
+        <p>
+          For Manchester's varied housing stock — from the Victorian terraces of Chorlton and
+          Didsbury to the executive homes of Sale and Altrincham — resin bound is incredibly
+          versatile. It suits period properties just as well as modern new builds, and with
+          over 20 aggregate colour blends available, we'll match the surface to your home.
+        </p>
+        <p>
+          Crucially, resin bound is <strong>fully permeable</strong>, meaning rainwater drains
+          through the surface naturally. This satisfies Manchester City Council's Sustainable
+          Drainage (SuDS) requirements, so in most cases no planning permission is required —
+          even for large driveways.
+        </p>
+
+        <ul class="check-list" aria-label="Resin driveway advantages">
+          <li>Fully permeable — usually no planning permission required</li>
+          <li>Completed in a single day for most Manchester properties</li>
+          <li>UV-stable resin — will not yellow, crack or fade</li>
+          <li>Weed-resistant — no joints for weeds to penetrate</li>
+          <li>Slip-resistant finish — ideal for sloped Manchester driveways</li>
+          <li>Low maintenance — a periodic jet wash keeps it pristine</li>
+          <li>10-year workmanship guarantee on every installation</li>
+        </ul>
+
+        <a href="/contact/" class="btn-primary" style="text-decoration:none;">Get a Free Resin Quote in Manchester</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     BENEFITS
+══════════════════════════════════════════ -->
+<section class="benefits-section" aria-labelledby="benefits-heading">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Why Resin Bound</p>
+      <h2 class="section-title" id="benefits-heading">The Benefits of Resin Driveways in Manchester</h2>
+      <p class="section-lead" style="margin-inline:auto; text-align:center;">
+        Resin bound surfaces offer a combination of looks, longevity and practicality that makes
+        them a natural fit for Manchester homes.
+      </p>
+    </div>
+    <div class="benefits-grid">
+      <article class="benefit-card">
+        <div class="benefit-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>No Planning Permission</h3>
+        <p>Fully permeable surface satisfies Manchester's SuDS requirements — no planning application needed in most cases under Permitted Development.</p>
+      </article>
+      <article class="benefit-card">
+        <div class="benefit-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Installed in a Day</h3>
+        <p>Most Manchester resin driveways are complete in a single day with minimal disruption. Surface ready for foot traffic within hours, vehicles within 24.</p>
+      </article>
+      <article class="benefit-card">
+        <div class="benefit-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Boosts Kerb Appeal</h3>
+        <p>A sleek, seamless surface transforms the front of your Manchester home. Available in 20+ natural aggregate blends to complement your property perfectly.</p>
+      </article>
+      <article class="benefit-card">
+        <div class="benefit-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Virtually Zero Maintenance</h3>
+        <p>No weeding, no sealing, no re-sanding. Just an occasional jet wash to keep your Manchester resin driveway looking like the day it was laid.</p>
+      </article>
+      <article class="benefit-card">
+        <div class="benefit-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+        </div>
+        <h3>Frost & Weed Resistant</h3>
+        <p>Encapsulated aggregate leaves no gaps for weeds, and the flexible resin layer resists cracking through Manchester's freeze-thaw weather cycles.</p>
+      </article>
+      <article class="benefit-card">
+        <div class="benefit-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Increases Property Value</h3>
+        <p>A quality resin driveway is consistently cited by estate agents as one of the best kerb-appeal upgrades for homes across Greater Manchester.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PROCESS
+══════════════════════════════════════════ -->
+<section class="process-section" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">How We Work</p>
+      <h2 class="section-title" id="process-heading">Resin Driveway Installation Process in Manchester</h2>
+      <p class="section-lead" style="margin-inline:auto; text-align:center;">
+        From your first call to driving on your new surface — here's exactly what to expect.
+      </p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-step__num" aria-label="Step 1">1</div>
+        <h3>Free Site Survey</h3>
+        <p>We visit your Manchester property, assess the existing surface, discuss your colour preferences, and provide a detailed written quote — all at no cost.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num" aria-label="Step 2">2</div>
+        <h3>Base Preparation</h3>
+        <p>The existing surface is inspected and repaired if needed. A macadam or concrete base is installed where required to create a stable, level foundation.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num" aria-label="Step 3">3</div>
+        <h3>Resin Installation</h3>
+        <p>Your chosen aggregate is blended with UV-stable resin on-site and hand-trowelled to create a smooth, seamless surface. Most driveways complete in one day.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num" aria-label="Step 4">4</div>
+        <h3>Ready to Use</h3>
+        <p>Walkable within hours, driveable within 24. We clean up completely and leave you with a pristine new Manchester driveway and zero mess.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     LOCAL SEO COPY
+══════════════════════════════════════════ -->
+<section class="local-section" aria-labelledby="local-heading">
+  <div class="container">
+    <div class="local-section__grid">
+
+      <div class="local-copy">
+        <p class="section-eyebrow">Local Resin Specialists</p>
+        <h2 id="local-heading">Resin Driveways Across Greater Manchester</h2>
+
+        <p>
+          We install <strong>resin driveways across Manchester and Greater Manchester</strong>,
+          covering a wide range of property types and neighbourhoods from the city centre
+          outwards. Whether you're in a terraced house in Chorlton or a detached home in
+          Altrincham, our team brings the same quality materials and workmanship to every job.
+        </p>
+
+        <h3>Resin Driveways in Didsbury &amp; Chorlton</h3>
+        <p>
+          <strong>Didsbury</strong> and <strong>Chorlton</strong> are two of Manchester's most
+          popular residential neighbourhoods, and both have seen a significant increase in resin
+          driveway installations in recent years. Period properties with original concrete or
+          tarmac forecourts are being transformed with smooth, contemporary resin surfaces —
+          often in natural golden or silver-grey aggregate blends that complement Victorian and
+          Edwardian brickwork beautifully. We work frequently in both areas and can provide
+          local references.
+        </p>
+
+        <h3>Resin Driveways in Sale &amp; Altrincham</h3>
+        <p>
+          In <strong>Sale</strong> and <strong>Altrincham</strong>, where many homes have larger
+          driveways and high standards of property presentation, resin bound is increasingly the
+          surface of choice. The seamless finish, combined with a wide choice of premium aggregate
+          colours, makes it a natural fit for the executive and detached properties common across
+          these areas. We install frequently in Trafford and can advise on the most appropriate
+          base specification for your soil conditions.
+        </p>
+
+        <h3>Resin Driveways in Stretford, Urmston &amp; Wythenshawe</h3>
+        <p>
+          Across <strong>Stretford</strong>, <strong>Urmston</strong> and
+          <strong>Wythenshawe</strong>, we install resin bound driveways for a range of
+          property types — from compact semi-detached homes to larger family properties.
+          Tarmac and concrete replacement is common in these areas, and resin bound offers
+          a significant upgrade in both appearance and practicality with surprisingly fast
+          installation times.
+        </p>
+
+        <h3>Resin Driveways in Withington, Fallowfield &amp; Levenshulme</h3>
+        <p>
+          The inner south Manchester suburbs of <strong>Withington</strong>,
+          <strong>Fallowfield</strong> and <strong>Levenshulme</strong> have a dense mix of
+          terraced and semi-detached properties, many with small but highly visible front
+          driveways. A resin bound surface makes a dramatic improvement to the kerb appeal
+          of these homes — and at smaller sizes, costs are often more accessible than
+          homeowners expect. Contact us for a free quote for your Manchester property.
+        </p>
+
+        <h3>Resin Driveways in Salford &amp; Eccles</h3>
+        <p>
+          Our work extends into <strong>Salford</strong> and <strong>Eccles</strong>, where
+          continued residential development and regeneration has created strong demand for
+          quality driveway surfaces. We've completed numerous resin installations across
+          these areas and are happy to provide site visit and quote with no obligation.
+        </p>
+
+        <h3>Why Choose a Local Manchester Resin Specialist?</h3>
+        <p>
+          Choosing a locally-based team for your <strong>resin driveway in Manchester</strong>
+          means you're working with contractors who know the area's ground conditions, drainage
+          patterns, and planning requirements. We're familiar with Greater Manchester's varied
+          soil types — from the clay-heavy ground of south Manchester to the sandier profiles
+          in parts of Trafford — and we specify the correct base depth and drainage solution
+          for your specific postcode and property.
+        </p>
+
+        <a href="/contact/" class="btn-primary" style="margin-top:0.5rem; text-decoration:none;">
+          Get a Free Resin Quote in Manchester
+        </a>
+      </div>
+
+      <!-- Sidebar -->
+      <aside>
+        <div class="areas-sidebar" aria-label="Manchester areas covered">
+          <h3>Areas We Cover</h3>
+          <ul class="areas-list">
+            <li>Didsbury</li>
+            <li>Chorlton</li>
+            <li>Sale</li>
+            <li>Altrincham</li>
+            <li>Stretford</li>
+            <li>Urmston</li>
+            <li>Withington</li>
+            <li>Fallowfield</li>
+            <li>Wythenshawe</li>
+            <li>Levenshulme</li>
+            <li>Salford</li>
+            <li>Eccles</li>
+            <li>Trafford</li>
+            <li>Rusholme</li>
+            <li>Gorton</li>
+            <li>Stockport</li>
+          </ul>
+
+          <div class="postcodes-box" aria-label="Manchester postcodes covered">
+            <p>Postcodes Covered</p>
+            <div class="codes">
+              <span class="postcode-tag">M1</span>
+              <span class="postcode-tag">M14</span>
+              <span class="postcode-tag">M20</span>
+              <span class="postcode-tag">M21</span>
+              <span class="postcode-tag">M22</span>
+              <span class="postcode-tag">M23</span>
+              <span class="postcode-tag">M32</span>
+              <span class="postcode-tag">M33</span>
+              <span class="postcode-tag">M41</span>
+              <span class="postcode-tag">WA14</span>
+              <span class="postcode-tag">WA15</span>
+              <span class="postcode-tag">SK</span>
+            </div>
+          </div>
+
+          <a href="tel:+447585510120" class="sidebar-cta">📞 +44 7585 510120</a>
+        </div>
+
+        <div class="related-sidebar">
+          <h4>Related Services</h4>
+          <ul>
+            <li><a href="/">All Driveways Manchester</a></li>
+            <li><a href="/block-paving-manchester/">Block Paving Manchester</a></li>
+            <li><a href="/resin-bound-driveways-stockport/">Resin Driveways Stockport</a></li>
+            <li><a href="/driveways-stockport/">Driveways Stockport</a></li>
+            <li><a href="/resin-bound-driveways-ashton-under-lyne">Resin Driveways Ashton-under-Lyne</a></li>
+            <li><a href="/resin-bound-driveways-oldham">Resin Driveways Oldham</a></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FAQ
+══════════════════════════════════════════ -->
+<section class="faq-section" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Common Questions</p>
+      <h2 class="section-title" id="faq-heading">Resin Driveways Manchester — FAQs</h2>
+    </div>
+    <div class="faq-grid">
+
+      <details class="faq-item">
+        <summary>How much do resin driveways cost in Manchester?</summary>
+        <p class="faq-answer">
+          Resin bound driveways in Manchester typically cost between £40 and £80 per square metre
+          depending on size, the aggregate chosen, existing surface condition, and any preparation
+          work required. A typical 40m² driveway would cost approximately £1,600–£3,200. We
+          provide free, itemised quotes — contact us for an accurate price for your specific
+          Manchester property.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do resin driveways need planning permission in Manchester?</summary>
+        <p class="faq-answer">
+          In most cases, no. Resin bound is fully permeable, so rainwater drains naturally through
+          the surface rather than running off into drains or the road. This satisfies Manchester
+          City Council's SuDS planning requirements, meaning resin bound driveways generally fall
+          within Permitted Development rights. We'll confirm this applies to your property during
+          the free site visit.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How long does a resin driveway last in Manchester?</summary>
+        <p class="faq-answer">
+          A professionally installed resin bound driveway typically lasts 15–25 years. The
+          UV-stable resin resists fading and cracking, and the encapsulated aggregate means
+          no loose stones. The surface is resistant to Manchester's frost and freeze-thaw
+          cycles, and requires only occasional jet washing to maintain. All our Manchester
+          installations are backed by a 10-year workmanship guarantee.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How long does installation take in Manchester?</summary>
+        <p class="faq-answer">
+          Most resin bound driveways in Manchester are completed in a single day. The resin and
+          aggregate are mixed on-site and trowelled onto the prepared base — a quick process
+          compared to block paving. The surface is walkable within a few hours of completion
+          and ready for vehicles within 24 hours, depending on temperature and conditions.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can resin be installed over existing tarmac in Manchester?</summary>
+        <p class="faq-answer">
+          Often yes — if the existing tarmac or concrete base is sound and stable, resin bound
+          can be laid directly over it, reducing both cost and installation time significantly.
+          If the existing surface is cracked, sunken or draining poorly, we'll recommend a full
+          base installation for the best long-term result. We'll assess this honestly during
+          your free survey.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What colours are available for resin driveways in Manchester?</summary>
+        <p class="faq-answer">
+          We offer over 20 natural and crushed aggregate blends, from warm golden gravels and
+          amber tones to cool slate greys and charcoal finishes. All aggregates use UV-stable
+          resin so they won't fade over time. We bring sample boards to every site visit so
+          you can see colours in context against your property and decide with confidence
+          before committing.
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CTA BANNER
+══════════════════════════════════════════ -->
+<section class="cta-banner" aria-label="Get a free resin driveway quote in Manchester">
+  <div class="container">
+    <h2>Ready for a Resin Driveway in Manchester?</h2>
+    <p>Free site survey, no obligation, response within 2 hours. Manchester's resin bound specialists.</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="/contact/" class="btn-dark">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Get Your Free Quote
+      </a>
+      <a href="tel:+447585510120" class="btn-dark" style="background:var(--blue-dark);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.05 1.23h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+        +44 7585 510120
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

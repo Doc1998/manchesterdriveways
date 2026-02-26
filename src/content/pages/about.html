@@ -1,79 +1,1473 @@
 ---
-title: 'About | All City Cleaning Services'
-description: ' Welcome to All City Cleaning Services, your premier choice for professional exterior Driveway & Patio cleaning in Ireland.'
-preloadImg: '/assets/images/ACCS.jpg'
+title: 'About Us'
+description: 'Meet the team behind Greater Manchesters trusted driveway specialists. Over 30 years laying block paving, resin driveways and tarmac across Manchester, Stockport and surrounding areas.'
+preloadImg: '/assets/images/resin.jpg'
 permalink: 'about/'
-eleventyNavigation:
-    key: About Us
-    order: 200
 ---
-
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/assets/css/about.css">
+    <link rel="stylesheet" href="/assets/css/local.css">
 {% endblock %}
 
 {% block body %}
-    <!-- ============================================ -->
-    <!--                    LANDING                   -->
-    <!-- ============================================ -->
+<!-- Schema.org LocalBusiness — rendered in <head> via layout -->
 
-    <section id="int-hero">
-        <h1 id="home-h">About Us</h1>
-        <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/ACCS.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/ACCS.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/ACCS.jpg" alt="All City Cleaning Services" loading="eager" width="2500" height="1667">
-        </picture>
 
-    </section>
 
-    <!-- ============================================ -->
-    <!--                 Side By Side                 -->
-    <!-- ============================================ -->
+<style>
+  /* ══════════════════════════════════════════
+     TOKENS
+  ══════════════════════════════════════════ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <section id="sbs">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-left">
-                <picture class="cs-picture cs-picture1">
-                    <source media="(max-width: 600px)" srcset="/assets/images/path.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/path.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/path.jpg" alt="path" loading="lazy" width="400" height="563">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <source media="(max-width: 600px)" srcset="/assets/images/house.jpeg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/house.jpeg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/house.jpeg" alt="house" loading="lazy" width="400" height="563">
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-right">
-                <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">All City Cleaning Services</h2>
-                <p class="cs-text">
-                    Welcome to All City Cleaning Services, your premier choice for professional exterior Driveway & Patio cleaning in Ireland. With a commitment to excellence and a dedication to customer satisfaction, we pride ourselves on delivering top-notch cleaning solutions for your property’s exterior surfaces.
-                </p>
-                <p class="cs-text">
-                    At All City Cleaning Services, we understand the importance of maintaining the cleanliness and integrity of your property. Whether it’s your roof, gutter, driveway, patio, wall, or tarmac, our experienced team utilizes state-of-the-art equipment and proven techniques to ensure exceptional results every time.
-                </p>
-                <p class="cs-text">
-                   
-                </p>
-                <div class="cs-flex-group">
-                    <p class="cs-flex-p">
-                        What sets us apart is our unwavering focus on quality and customer care. We are fully insured, giving you peace of mind knowing that your property is in safe hands. Our team is highly trained and equipped to handle any cleaning challenge, no matter the size or complexity.
-                    </p>
-                    <span class="cs-name">Thomas Barry</span>
-                    <span class="cs-job">Founder</span>
-                    <img class="cs-quote-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg" alt="gavel" width="136" height="77">
-                </div>
-                <a href="/contact" class="cs-button-solid">Make A Booking</a>
-            </div>
+  :root {
+    --blue:        #1a56db;
+    --blue-dark:   #1e429f;
+    --blue-pale:   #eef2fd;
+    --dark:        #1a1814;
+    --warm-dark:   #2d2a26;
+    --white:       #ffffff;
+    --cream:       #faf8f4;
+    --stone:       #f0ece4;
+    --stone-2:     #e4ddd2;
+    --text:        #2d2a26;
+    --text-mid:    #5a5550;
+    --text-light:  #8a8480;
+    --border:      #ddd8d0;
+    --border-light:#ede9e2;
+    --font-display:'Barlow Condensed', sans-serif;
+    --font-body:   'Lora', serif;
+    --font-ui:     system-ui, sans-serif;
+    --container:   1080px;
+    --radius:      8px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); color: var(--text); background: var(--cream); }
+
+  .container {
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  /* ══════════════════════════════════════════
+     PAGE HEADER — warm cream, large editorial
+  ══════════════════════════════════════════ */
+  .page-header {
+    background: var(--cream);
+    padding: 5rem 1.5rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle warm dot grid */
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--stone-2) 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .page-header__inner {
+    max-width: var(--container);
+    margin-inline: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    color: var(--text-light);
+    list-style: none;
+    margin-bottom: 2.5rem;
+  }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: var(--blue); }
+  .breadcrumb li + li::before { content: '/'; margin-right: 0.4rem; color: var(--border); }
+
+  .page-header__eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    animation: fade-up 0.5s ease both;
+  }
+
+  .page-header__eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--blue);
+  }
+
+  /* Giant editorial headline with two typographic registers */
+  .page-header__title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.88;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.5rem;
+    animation: fade-up 0.5s ease 0.08s both;
+  }
+
+  .page-header__title .row-sm {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: var(--text-mid);
+    display: block;
+  }
+
+  .page-header__title .row-lg {
+    font-size: clamp(5rem, 10vw, 9rem);
+    color: var(--dark);
+    display: block;
+    /* Stone texture underline via border */
+    position: relative;
+  }
+
+  /* Two-col layout: intro para left, photo right */
+  .page-header__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    animation: fade-up 0.5s ease 0.18s both;
+  }
+
+  .page-header__intro p {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-mid);
+    margin-bottom: 1.25rem;
+  }
+
+  .page-header__intro p:first-child {
+    font-size: 1.25rem;
+    color: var(--text);
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  /* Hero photo — sits at baseline, bleeds into cream */
+  .page-header__photo {
+    position: relative;
+    align-self: flex-end;
+  }
+
+  .page-header__photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  /* Floating "Est." badge */
+  .page-header__est {
+    position: absolute;
+    top: -1.5rem;
+    right: 1.5rem;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 1.1rem;
+    border-radius: var(--radius);
+    text-align: center;
+    line-height: 1.2;
+    box-shadow: 0 4px 16px rgba(26,86,219,0.3);
+  }
+
+  .page-header__est small {
+    display: block;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    opacity: 0.8;
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ══════════════════════════════════════════
+     STATS BAND — warm stone, full width
+  ══════════════════════════════════════════ */
+  .stats-band {
+    background: var(--stone);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 1.5rem;
+  }
+
+  .stats-band__inner {
+    max-width: var(--container);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .stat-block {
+    text-align: center;
+    padding: 0.5rem 1rem;
+    position: relative;
+  }
+
+  .stat-block + .stat-block::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 10%; bottom: 10%;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .stat-block__num {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--blue);
+    display: block;
+  }
+
+  .stat-block__label {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-mid);
+    margin-top: 0.3rem;
+  }
+
+  /* ══════════════════════════════════════════
+     OUR STORY — two-column long read
+  ══════════════════════════════════════════ */
+  .story-section {
+    background: var(--white);
+    padding-block: 6rem;
+  }
+
+  .story-section__grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  /* Sticky left label column */
+  .story-section__label {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .story-section__label-tag {
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .story-section__label-tag::before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--blue);
+  }
+
+  .story-section__label h2 {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+  }
+
+  .story-section__label h2 em {
+    color: var(--blue);
+    font-style: normal;
+    display: block;
+  }
+
+  .story-section__label-rule {
+    width: 40px;
+    height: 3px;
+    background: var(--stone-2);
+    border-radius: 2px;
+    margin-top: 1.5rem;
+  }
+
+  /* Right: flowing article text */
+  .story-section__body p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--text-mid);
+    margin-bottom: 1.25rem;
+  }
+
+  .story-section__body p:first-child {
+    font-size: 1.15rem;
+    color: var(--text);
+    font-style: italic;
+  }
+
+  .story-section__body strong { color: var(--text); font-weight: 600; }
+
+  /* Pull quote */
+  .pull-quote {
+    border-left: 3px solid var(--blue);
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .pull-quote p {
+    font-family: var(--font-display);
+    font-size: 1.6rem !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2 !important;
+    color: var(--dark) !important;
+    font-style: normal !important;
+    margin: 0 !important;
+    letter-spacing: -0.01em;
+  }
+
+  /* ══════════════════════════════════════════
+     PHOTO STRIP — full-width 3-image mosaic
+  ══════════════════════════════════════════ */
+  .photo-strip {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4px;
+    background: var(--stone-2);
+    height: 380px;
+  }
+
+  .photo-strip__img {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .photo-strip__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .photo-strip__img:hover img { transform: scale(1.04); }
+
+  .photo-strip__caption {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(4px);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.28rem 0.6rem;
+    border-radius: 3px;
+    border: 1px solid var(--border-light);
+  }
+
+  /* ══════════════════════════════════════════
+     WHY CHOOSE US — alternating feature rows
+  ══════════════════════════════════════════ */
+  .why-section {
+    background: var(--cream);
+    padding-block: 6rem;
+  }
+
+  .why-section__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .why-section__header .eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .why-section__header .eyebrow::before,
+  .why-section__header .eyebrow::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1.5px;
+    background: var(--blue);
+  }
+
+  .why-section__header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    line-height: 1;
+  }
+
+  .why-section__header p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-mid);
+    max-width: 520px;
+    margin: 0.75rem auto 0;
+    line-height: 1.75;
+  }
+
+  /* Feature rows */
+  .why-rows { display: flex; flex-direction: column; gap: 0; }
+
+  .why-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .why-row:last-child { border-bottom: 1px solid var(--border-light); }
+
+  .why-row__img {
+    overflow: hidden;
+    aspect-ratio: 16/10;
+    background: var(--stone);
+  }
+
+  .why-row__img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .why-row:hover .why-row__img img { transform: scale(1.03); }
+
+  /* Alternate image left / right */
+  .why-row:nth-child(even) { direction: rtl; }
+  .why-row:nth-child(even) > * { direction: ltr; }
+
+  .why-row__content {
+    padding: 3rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--white);
+  }
+
+  .why-row__num {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--stone-2);
+    margin-bottom: -0.5rem;
+    display: block;
+    letter-spacing: -0.04em;
+  }
+
+  .why-row__content h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 0.75rem;
+    line-height: 1.05;
+  }
+
+  .why-row__content p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-mid);
+  }
+
+  .why-row__content strong { color: var(--text); font-weight: 600; }
+
+  /* ══════════════════════════════════════════
+     TEAM / VALUES — 3-col warm cards
+  ══════════════════════════════════════════ */
+  .values-section {
+    background: var(--stone);
+    padding-block: 6rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .values-section__header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .values-section__header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .values-section__header p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    max-width: 480px;
+    margin-inline: auto;
+    line-height: 1.75;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .value-card {
+    background: var(--white);
+    padding: 2.25rem 2rem;
+    position: relative;
+  }
+
+  /* Blue corner accent */
+  .value-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 40px;
+    background: var(--blue);
+  }
+
+  .value-card__icon {
+    width: 48px;
+    height: 48px;
+    background: var(--blue-pale);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .value-card__icon svg {
+    width: 22px; height: 22px;
+    color: var(--blue);
+  }
+
+  .value-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .value-card p {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: var(--text-mid);
+  }
+
+  /* ══════════════════════════════════════════
+     COVERAGE — map-style area grid
+  ══════════════════════════════════════════ */
+  .coverage-section {
+    background: var(--white);
+    padding-block: 6rem;
+  }
+
+  .coverage-section__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .coverage-copy h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    line-height: 1.0;
+    margin-bottom: 1rem;
+  }
+
+  .coverage-copy h2 em {
+    color: var(--blue);
+    font-style: normal;
+  }
+
+  .coverage-copy p {
+    font-family: var(--font-body);
+    font-size: 0.97rem;
+    line-height: 1.85;
+    color: var(--text-mid);
+    margin-bottom: 1rem;
+  }
+
+  .coverage-copy strong { color: var(--text); font-weight: 600; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 1.6rem;
+    border-radius: 3px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--dark);
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.9rem 1.4rem;
+    border-radius: 3px;
+    border: 2px solid var(--border);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--dark); background: var(--stone); }
+
+  /* Area grid */
+  .areas-panel {
+    background: var(--cream);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+  }
+
+  .areas-panel__header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+    background: var(--stone);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .areas-panel__header h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+  }
+
+  .areas-panel__header span {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-light);
+  }
+
+  .areas-panel__grid {
+    padding: 1.25rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+
+  .area-tag {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 0.4rem 0.6rem;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-mid);
+    text-align: center;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+
+  .area-tag:hover {
+    background: var(--blue-pale);
+    border-color: rgba(26,86,219,0.2);
+    color: var(--blue-dark);
+  }
+
+  .postcodes-row {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-light);
+    background: var(--stone);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .postcodes-row span {
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-light);
+    margin-right: 0.25rem;
+    flex-shrink: 0;
+  }
+
+  .pc-tag {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0.18rem 0.5rem;
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+  }
+
+  /* ══════════════════════════════════════════
+     TESTIMONIALS — warm quote cards
+  ══════════════════════════════════════════ */
+  .testimonials-section {
+    background: var(--cream);
+    padding-block: 6rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .testimonials-section__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .testimonials-section__header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .testimonials-section__header p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-mid);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    position: relative;
+  }
+
+  /* Large quote mark */
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--stone-2);
+    pointer-events: none;
+  }
+
+  .testimonial-card__stars {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-card__stars svg {
+    width: 14px;
+    height: 14px;
+    fill: #f5c800;
+  }
+
+  .testimonial-card__text {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--text-mid);
+    font-style: italic;
+    margin-bottom: 1.25rem;
+  }
+
+  .testimonial-card__author {
+    border-top: 1px solid var(--border-light);
+    padding-top: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .testimonial-card__name {
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  .testimonial-card__location {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    color: var(--text-light);
+    margin-top: 0.1rem;
+  }
+
+  .testimonial-card__source {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--blue);
+  }
+
+  /* Google logo inline */
+  .google-word { font-family: var(--font-ui); font-size: 0.8rem; font-weight: 900; }
+  .g1{color:#4285F4}.g2{color:#EA4335}.g3{color:#FBBC05}
+  .g4{color:#4285F4}.g5{color:#34A853}.g6{color:#EA4335}
+
+  /* ══════════════════════════════════════════
+     CTA — warm stone band, not dark
+  ══════════════════════════════════════════ */
+  .cta-section {
+    background: var(--blue);
+    padding-block: 5rem;
+  }
+
+  .cta-section__inner {
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .cta-section__copy h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-section__copy p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: rgba(255,255,255,0.78);
+    max-width: 540px;
+  }
+
+  .cta-section__btns {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .btn-white {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--white);
+    color: var(--blue-dark);
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 1.6rem;
+    border-radius: 3px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-white:hover { background: var(--cream); transform: translateY(-1px); }
+
+  .btn-white-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--white);
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.9rem 1.4rem;
+    border-radius: 3px;
+    border: 2px solid rgba(255,255,255,0.4);
+    transition: border-color 0.2s;
+  }
+
+  .btn-white-outline:hover { border-color: var(--white); }
+
+  /* ══════════════════════════════════════════
+     RESPONSIVE
+  ══════════════════════════════════════════ */
+  @media (max-width: 960px) {
+    .page-header__body    { grid-template-columns: 1fr; gap: 2.5rem; }
+    .page-header__photo   { display: none; }
+    .stats-band__inner    { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .stat-block + .stat-block::before { display: none; }
+    .story-section__grid  { grid-template-columns: 1fr; gap: 2.5rem; }
+    .story-section__label { position: static; }
+    .photo-strip          { grid-template-columns: 1fr 1fr; height: 300px; }
+    .photo-strip__img:last-child { display: none; }
+    .why-row              { grid-template-columns: 1fr; direction: ltr !important; }
+    .why-row__img         { aspect-ratio: 16/7; }
+    .why-row:nth-child(even) { direction: ltr; }
+    .values-grid          { grid-template-columns: 1fr 1fr; }
+    .coverage-section__inner { grid-template-columns: 1fr; gap: 3rem; }
+    .testimonials-grid    { grid-template-columns: 1fr 1fr; }
+    .cta-section__inner   { grid-template-columns: 1fr; }
+    .cta-section__btns    { justify-content: flex-start; }
+  }
+
+  @media (max-width: 600px) {
+    .page-header__title .row-lg { font-size: 4.5rem; }
+    .stats-band__inner    { grid-template-columns: 1fr 1fr; }
+    .photo-strip          { height: 220px; }
+    .why-row__content     { padding: 2rem 1.5rem; }
+    .values-grid          { grid-template-columns: 1fr; }
+    .areas-panel__grid    { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid    { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- ══════════════════════════════════════════
+     PAGE HEADER
+══════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="page-header__inner">
+
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">About Us</span>
+        <meta itemprop="position" content="2">
+      </li>
+    </ol>
+
+    <p class="page-header__eyebrow" aria-label="Section label">Greater Manchester's Driveway Specialists</p>
+
+    <h1 class="page-header__title">
+      <span class="row-sm">We've been laying</span>
+      <span class="row-lg">driveways</span>
+    </h1>
+
+    <div class="page-header__body">
+      <div class="page-header__intro">
+        <p>Since 1994, we've been Manchester and Stockport's trusted choice for block paving, resin driveways, tarmac and pattern imprinted concrete.</p>
+        <p>
+          What started as a two-man team with a van and a compactor plate has grown into one of Greater Manchester's most well-regarded driveway contractors — but our approach hasn't changed. We still give every job the same care and attention, and we still stand behind every driveway we lay with a 10-year guarantee.
+        </p>
+        <p>
+          We're not a national franchise. We're a local team, based in Greater Manchester, who know these roads, these properties, and these customers. When you call us, you speak to someone who's actually going to lay your driveway.
+        </p>
+      </div>
+
+      <div class="page-header__photo">
+        <img
+          src="/assets/images/block-paving.jpg"
+          alt="The team on site laying block paving in Manchester"
+          width="560"
+          height="420"
+          loading="eager"
+        >
+        <div class="page-header__est" aria-label="Established 1994">
+          <small>Est.</small>
+          1994
         </div>
-    </section>
+      </div>
+    </div>
 
-    {% include 'components/cta.html' %}
+  </div>
+</div>
 
+<!-- ══════════════════════════════════════════
+     STATS BAND
+══════════════════════════════════════════ -->
+<div class="stats-band" aria-label="Company statistics">
+  <div class="stats-band__inner">
+    <div class="stat-block">
+      <span class="stat-block__num">30+</span>
+      <span class="stat-block__label">Years in Business</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-block__num">100s</span>
+      <span class="stat-block__label">Driveways Completed</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-block__num">58</span>
+      <span class="stat-block__label">Google Reviews</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-block__num">10yr</span>
+      <span class="stat-block__label">Workmanship Guarantee</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PHOTO STRIP
+══════════════════════════════════════════ -->
+<div class="photo-strip" aria-label="Photos of our driveway work across Manchester and Stockport">
+  <div class="photo-strip__img">
+    <img
+      src="/assets/images/block-paving2.jpg"
+      alt="Block paving driveway completed in Didsbury"
+      width="720" height="380"
+      loading="lazy"
+    >
+    <span class="photo-strip__caption">Herringbone · Didsbury</span>
+  </div>
+  <div class="photo-strip__img">
+    <img
+      src="/assets/images/block-paving3.jpg"
+      alt="Resin bound driveway in Sale"
+      width="360" height="380"
+      loading="lazy"
+    >
+    <span class="photo-strip__caption">Resin · Sale</span>
+  </div>
+  <div class="photo-strip__img">
+    <img
+      src="/assets/images/hero.webp"
+      alt="Block paving patio in Bramhall, Stockport"
+      width="360" height="380"
+      loading="lazy"
+    >
+    <span class="photo-strip__caption">Block Paving · Bramhall</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     WHY CHOOSE US
+══════════════════════════════════════════ -->
+<section class="why-section" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="why-section__header">
+      <p class="eyebrow">Why Choose Us</p>
+      <h2 id="why-heading">What Makes Us Different</h2>
+      <p>A lot of driveway companies say the same things. Here's what we actually do differently — and why it matters for your driveway.</p>
+    </div>
+  </div>
+
+  <div class="why-rows">
+
+    <div class="why-row">
+      <div class="why-row__img">
+        <img
+          src="/assets/images/block-paving4.jpg"
+          alt="MOT Type 1 sub-base being compacted on a Manchester driveway"
+          width="540" height="338"
+          loading="lazy"
+        >
+      </div>
+      <div class="why-row__content">
+        <span class="why-row__num" aria-hidden="true">01</span>
+        <h3>We Never Skimp on the Sub-base</h3>
+        <p>
+          The sub-base is what your driveway is built on. Lay it too shallow, use the wrong material, or skip proper compaction — and the surface above it will fail. We use <strong>compacted MOT Type 1</strong> on every single job, assessed and specified to the correct depth for your ground conditions. It's more work. It costs more. And it's why our driveways last 20+ years.
+        </p>
+      </div>
+    </div>
+
+    <div class="why-row">
+      <div class="why-row__img">
+        <img
+          src="/assets/images/block-paving3.jpg"
+          alt="Team member on site in Stockport"
+          width="540" height="338"
+          loading="lazy"
+        >
+      </div>
+      <div class="why-row__content">
+        <span class="why-row__num" aria-hidden="true">02</span>
+        <h3>We're Actually Local</h3>
+        <p>
+          We're not a national lead-generation service that subcontracts your job to whoever's available. <strong>We are the people who will lay your driveway.</strong> We're based in Greater Manchester, we know the local ground conditions, we know the planning requirements, and when something needs sorting after the job is done, you'll be speaking to the same team who did the work.
+        </p>
+      </div>
+    </div>
+
+    <div class="why-row">
+      <div class="why-row__img">
+        <img
+          src="/assets/images/block-paving2.jpg"
+          alt="Completed driveway with clear finish in Altrincham"
+          width="540" height="338"
+          loading="lazy"
+        >
+      </div>
+      <div class="why-row__content">
+        <span class="why-row__num" aria-hidden="true">03</span>
+        <h3>A Real 10-Year Guarantee</h3>
+        <p>
+          Our 10-year workmanship guarantee isn't small print. It's a commitment we make because we're confident in how we build. If a surface fails due to workmanship within 10 years, <strong>we'll fix it.</strong> We've been in business for over 30 years — we're not going anywhere, and neither are our guarantees.
+        </p>
+      </div>
+    </div>
+
+    <div class="why-row">
+      <div class="why-row__img">
+        <img
+          src="/assets/images/resin.jpg"
+          alt="Free site survey being conducted for a driveway in Chorlton"
+          width="540" height="338"
+          loading="lazy"
+        >
+      </div>
+      <div class="why-row__content">
+        <span class="why-row__num" aria-hidden="true">04</span>
+        <h3>Honest Advice, Not a Hard Sell</h3>
+        <p>
+          We'll visit your property for free, assess what's actually there, and tell you honestly what we think is the right approach — even if that means recommending a repair rather than a full replacement. <strong>We'd rather lose a sale than put in work that isn't right for your property.</strong> That's how you build the kind of reputation that lasts 30 years.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     VALUES
+══════════════════════════════════════════ -->
+<section class="values-section" aria-labelledby="values-heading">
+  <div class="container">
+
+    <div class="values-section__header">
+      <h2 id="values-heading">How We Work</h2>
+      <p>The principles that have guided every job since 1994.</p>
+    </div>
+
+    <div class="values-grid">
+
+      <div class="value-card">
+        <div class="value-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Quality Materials Only</h3>
+        <p>We specify MOT Type 1 sub-base, quality block manufacturers, and UV-stable resins on every job. No substitutions to cut costs mid-project.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>We Show Up on Time</h3>
+        <p>We agree a start date and we're there. We know how disruptive driveway work is — we minimise that disruption by communicating clearly and keeping to schedule.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3>Transparent Pricing</h3>
+        <p>Our quotes are itemised and in writing. No verbal estimates, no surprise additions. The price we quote is the price you pay, unless you change the spec.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>We Clean Up Properly</h3>
+        <p>All excavation waste removed, surrounding areas swept and reinstated, and a full site clean before we leave. Your neighbours will barely know we were there.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/></svg>
+        </div>
+        <h3>Aftercare & Support</h3>
+        <p>After your driveway is complete, we're still available. We walk you through maintenance advice and answer any questions in the weeks after installation.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Built on Referrals</h3>
+        <p>The majority of our work comes from customer referrals and repeat business. That's the best quality guarantee we can offer — people trust us enough to recommend us to their neighbours.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     COVERAGE
+══════════════════════════════════════════ -->
+<section class="coverage-section" aria-labelledby="coverage-heading">
+  <div class="container">
+    <div class="coverage-section__inner">
+
+      <div class="coverage-copy">
+        <p class="story-section__label-tag" style="font-family:var(--font-ui);font-size:0.68rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+          <span style="display:block;width:18px;height:2px;background:var(--blue);"></span>
+          Where We Work
+        </p>
+        <h2 id="coverage-heading">Serving <em>Manchester</em> &amp; Stockport</h2>
+
+        <p>
+          We cover all of <strong>Greater Manchester and Stockport</strong> — from the inner suburbs of Didsbury, Chorlton and Withington to the outer areas of Sale, Altrincham, Bramhall and Hazel Grove. If you're in an M, WA or SK postcode, we can almost certainly help.
+        </p>
+        <p>
+          We're fully familiar with the ground conditions, soil types and drainage requirements across the region, which means we specify the right build-up for your specific location — not a one-size-fits-all approach.
+        </p>
+        <p>
+          Not sure if we cover your area? Call us on <a href="tel:+447585510120" style="color:var(--blue);font-weight:600;text-decoration:none;">+44 7585 510120</a> and we'll let you know straight away.
+        </p>
+
+        <div style="display:flex;gap:0.85rem;flex-wrap:wrap;margin-top:1.75rem;">
+          <a href="/contact/" class="btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Get a Free Quote
+          </a>
+          <a href="tel:+447585510120" class="btn-outline">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.05 1.23h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+            +44 7585 510120
+          </a>
+        </div>
+      </div>
+
+      <div class="areas-panel" aria-label="Areas we cover">
+        <div class="areas-panel__header">
+          <h3>Areas We Cover</h3>
+          <span>20+ Locations</span>
+        </div>
+        <div class="areas-panel__grid">
+          <span class="area-tag">Didsbury</span>
+          <span class="area-tag">Chorlton</span>
+          <span class="area-tag">Sale</span>
+          <span class="area-tag">Altrincham</span>
+          <span class="area-tag">Stretford</span>
+          <span class="area-tag">Urmston</span>
+          <span class="area-tag">Withington</span>
+          <span class="area-tag">Fallowfield</span>
+          <span class="area-tag">Wythenshawe</span>
+          <span class="area-tag">Bramhall</span>
+          <span class="area-tag">Hazel Grove</span>
+          <span class="area-tag">Cheadle</span>
+          <span class="area-tag">Stockport</span>
+          <span class="area-tag">Marple</span>
+          <span class="area-tag">Edgeley</span>
+          <span class="area-tag">Salford</span>
+          <span class="area-tag">Eccles</span>
+          <span class="area-tag">Romiley</span>
+        </div>
+        <div class="postcodes-row">
+          <span>Postcodes:</span>
+          <span class="pc-tag">M14</span>
+          <span class="pc-tag">M20</span>
+          <span class="pc-tag">M21</span>
+          <span class="pc-tag">M22</span>
+          <span class="pc-tag">M23</span>
+          <span class="pc-tag">M32</span>
+          <span class="pc-tag">M33</span>
+          <span class="pc-tag">M41</span>
+          <span class="pc-tag">WA14</span>
+          <span class="pc-tag">WA15</span>
+          <span class="pc-tag">SK1–SK8</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════ -->
+<section class="testimonials-section" aria-labelledby="testimonials-heading">
+  <div class="container">
+
+    <div class="testimonials-section__header">
+      <h2 id="testimonials-heading">What Our Customers Say</h2>
+      <p>58 five-star Google reviews from homeowners across Manchester and Stockport.</p>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <article class="testimonial-card">
+        <div class="testimonial-card__stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-card__text">
+          "Had my driveway done by this
+Company just finished it fabulous. Patrick and his team were delightful polite, punctual hard working and have done a great job.
+Can't recommend them enough."
+        </p>
+        <div class="testimonial-card__author">
+          <div>
+            <p class="testimonial-card__name">Eileen Steel</p>
+            <p class="testimonial-card__location">Didsbury, Manchester</p>
+          </div>
+          <span class="testimonial-card__source">
+            <span class="google-word"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span>
+          </span>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-card__stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-card__text">
+          "Contacted Manchester Driveways on a Friday and sent them pictures of our drive asking for a quote. They were quick to reply and explained that they would need to send someone over to assess the property and measure it to provide an accurate quotation. They showed up a few days later at the agreed time and Tommy was very polite, well informed, booked us in. They transformed my home from one with a messy driveway to a modern home in 2days as you can see from the before and after pics. Truly amazing."
+        </p>
+        <div class="testimonial-card__author">
+          <div>
+            <p class="testimonial-card__name">Michelle Gibson</p>
+            <p class="testimonial-card__location">Bramhall, Stockport</p>
+          </div>
+          <span class="testimonial-card__source">
+            <span class="google-word"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span>
+          </span>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-card__stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-card__text">
+          "Amazing work from Patrick and the team.
+Quoted on Thursday, Tuesday got the job done! Fast with great results.
+
+Definitely recommend to get the job done, I will use Manchester Driveways Ltd again in the future."
+        </p>
+        <div class="testimonial-card__author">
+          <div>
+            <p class="testimonial-card__name">Stavros Kollias</p>
+            <p class="testimonial-card__location">Sale, Trafford</p>
+          </div>
+          <span class="testimonial-card__source">
+            <span class="google-word"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span>
+          </span>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CTA
+══════════════════════════════════════════ -->
+<section class="cta-section" aria-label="Get in touch">
+  <div class="cta-section__inner">
+    <div class="cta-section__copy">
+      <h2>Ready to Get Started?</h2>
+      <p>Free site survey, detailed written quote, no obligation. We cover all of Manchester and Stockport — call or drop us a message and we'll get back to you within 2 hours.</p>
+    </div>
+    <div class="cta-section__btns">
+      <a href="/contact/" class="btn-white">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Get a Free Quote
+      </a>
+      <a href="tel:+447585510120" class="btn-white-outline">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.05 1.23h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+        +44 7585 510120
+      </a>
+    </div>
+  </div>
+</section>
 {% endblock %}
