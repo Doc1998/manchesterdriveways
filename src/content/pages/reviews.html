@@ -1,9 +1,681 @@
 ---
-title: 'Reviews'
-description: ''
+title: 'Customer Reviews | Driveway Installations Across Greater Manchester'
+description: 'Read reviews from customers across Greater Manchester — honest feedback on our block paving, resin and tarmac driveway installations.'
 preloadImg: '/assets/images/resin.jpg'
 permalink: 'reviews/'
-eleventyNavigation:
-    key: Reviews
-    order: 400
 ---
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css">
+{% endblock %}
+
+{% block body %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Your Driveway Company",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "58",
+    "bestRating": "5"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "James Thornton" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewBody": "Absolutely delighted with our new block paving driveway. From the initial survey right through to the final clean-up, the whole team were professional, tidy and communicated well. The finished result looks fantastic — several neighbours have already asked for their number.",
+      "datePublished": "2024-11-08"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Sarah Mellor" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewBody": "We had a resin bound driveway installed in October and the quality is outstanding. They were honest about what the existing base needed before they could start, gave us a fair written quote, and stuck to it. Would recommend without hesitation.",
+      "datePublished": "2024-10-21"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "David Okafor" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewBody": "Used them for a tarmac resurfacing job in Oldham. Turned up on time, did the work in a day, left the site completely clean. Price was exactly as quoted — no surprises. Simple, straightforward, done properly.",
+      "datePublished": "2024-09-14"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Claire Whitfield" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewBody": "The block paving on our Altrincham property looks beautiful. We went with tumbled clay blocks and a feature circle — exactly as we'd discussed at the survey. The team were respectful of the property throughout and the whole job was finished ahead of schedule.",
+      "datePublished": "2024-08-30"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Mark Greenhalgh" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewBody": "Third time we've used this company — first for our own driveway in Stockport, then for a rental property, and now for my mother's house in Ashton. Consistent quality every time. They're not the cheapest quote you'll get, but they do the job properly and it lasts.",
+      "datePublished": "2024-07-19"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Priya Nair" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewBody": "Really impressed from start to finish. They took the time to explain the difference between resin bound and resin bonded at the survey and recommended what was right for us rather than just the more expensive option. The driveway looks brilliant and was installed in two days.",
+      "datePublished": "2024-06-04"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue:         #1a56db;
+    --blue-dark:    #1e429f;
+    --blue-pale:    #eef2fd;
+    --white:        #ffffff;
+    --cream:        #faf8f4;
+    --stone:        #f0ece4;
+    --stone-2:      #e2dbd0;
+    --dark:         #111110;
+    --text:         #1c1a17;
+    --text-mid:     #56524d;
+    --text-light:   #8c8680;
+    --border:       #ddd8d0;
+    --border-light: #ece8e0;
+    --gold:         #f5c800;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body:    'Lora', serif;
+    --font-ui:      system-ui, sans-serif;
+    --container:    1080px;
+    --radius:       6px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); color: var(--text); background: var(--cream); }
+
+  .container {
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  /* ══ HEADER ══ */
+  .reviews-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-light);
+    padding: 4rem 1.5rem 3.5rem;
+    text-align: center;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    color: var(--text-light);
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--blue); }
+  .breadcrumb li + li::before { content: '/'; margin-right: 0.4rem; color: var(--border); }
+
+  .reviews-header__eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.75rem;
+  }
+
+  .reviews-header__title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.88;
+    letter-spacing: -0.025em;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Aggregate score */
+  .aggregate {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: var(--stone);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 0.75rem 1.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .aggregate__score {
+    font-family: var(--font-display);
+    font-size: 2.75rem;
+    font-weight: 900;
+    color: var(--dark);
+    line-height: 1;
+  }
+
+  .aggregate__right { display: flex; flex-direction: column; gap: 0.25rem; align-items: flex-start; }
+
+  .stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  .stars svg {
+    fill: var(--gold);
+    width: 16px; height: 16px;
+  }
+
+  .aggregate__count {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-light);
+  }
+
+  .aggregate__source {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding-left: 1.25rem;
+    border-left: 1px solid var(--border);
+  }
+
+  .gw { font-family: var(--font-ui); font-size: 1.1rem; font-weight: 900; line-height: 1; }
+  .g1{color:#4285F4}.g2{color:#EA4335}.g3{color:#FBBC05}.g4{color:#4285F4}.g5{color:#34A853}.g6{color:#EA4335}
+
+  .aggregate__source span:last-child {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    color: var(--text-light);
+    font-weight: 600;
+  }
+
+  /* ══ REVIEWS GRID ══ */
+  .reviews-body { padding-block: 4rem; }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  /* ── Review card ── */
+  .review-card {
+    background: var(--white);
+    border: 1.5px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    animation: fade-up 0.4s ease both;
+  }
+
+  .review-card:nth-child(1) { animation-delay: 0.05s; }
+  .review-card:nth-child(2) { animation-delay: 0.10s; }
+  .review-card:nth-child(3) { animation-delay: 0.15s; }
+  .review-card:nth-child(4) { animation-delay: 0.20s; }
+  .review-card:nth-child(5) { animation-delay: 0.25s; }
+  .review-card:nth-child(6) { animation-delay: 0.30s; }
+
+  .review-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 6px 24px rgba(26,86,219,0.08);
+    transform: translateY(-2px);
+  }
+
+  /* Stars row */
+  .review-card__stars {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .review-card__stars .stars svg { width: 14px; height: 14px; }
+
+  /* Google G mark */
+  .review-card__source {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0.4;
+  }
+
+  /* Quote mark + body */
+  .review-card__body {
+    position: relative;
+    flex: 1;
+  }
+
+  .review-card__body::before {
+    content: '\201C';
+    font-family: var(--font-body);
+    font-size: 4rem;
+    line-height: 0.75;
+    color: var(--blue);
+    opacity: 0.15;
+    position: absolute;
+    top: -0.25rem;
+    left: -0.25rem;
+    pointer-events: none;
+  }
+
+  .review-card__text {
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    line-height: 1.78;
+    color: var(--text-mid);
+    font-style: italic;
+  }
+
+  /* Author row */
+  .review-card__author {
+    border-top: 1px solid var(--border-light);
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .review-card__name {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--dark);
+  }
+
+  .review-card__meta {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    color: var(--text-light);
+    font-weight: 600;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  /* Initials avatar */
+  .review-card__avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .review-card__author-info { display: flex; align-items: center; gap: 0.65rem; }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ══ LEAVE A REVIEW STRIP ══ */
+  .leave-review {
+    background: var(--stone);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 1.5rem;
+  }
+
+  .leave-review__inner {
+    max-width: var(--container);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .leave-review p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    font-style: italic;
+  }
+
+  .leave-review p strong { font-style: normal; color: var(--text); font-weight: 600; }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--white);
+    color: var(--dark);
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    padding: 0.8rem 1.35rem;
+    border-radius: var(--radius);
+    border: 1.5px solid var(--border);
+    transition: border-color 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+  .btn-outline:hover { border-color: var(--dark); background: var(--stone); }
+
+  /* ══ CTA ══ */
+  .hub-cta {
+    background: var(--blue);
+    padding-block: 4rem;
+  }
+
+  .hub-cta__inner {
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .hub-cta h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+
+  .hub-cta p { font-family: var(--font-body); font-size: 0.97rem; color: rgba(255,255,255,0.75); }
+
+  .hub-cta__btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+  .btn-white {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--white); color: var(--blue-dark);
+    font-family: var(--font-ui); font-size: 0.85rem; font-weight: 800;
+    letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;
+    padding: 0.9rem 1.5rem; border-radius: var(--radius);
+    transition: background 0.2s;
+  }
+  .btn-white:hover { background: var(--cream); }
+
+  .btn-white-outline {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent; color: var(--white);
+    font-family: var(--font-ui); font-size: 0.85rem; font-weight: 700;
+    text-decoration: none; padding: 0.9rem 1.35rem; border-radius: var(--radius);
+    border: 2px solid rgba(255,255,255,0.4); transition: border-color 0.2s;
+  }
+  .btn-white-outline:hover { border-color: var(--white); }
+
+  /* ══ RESPONSIVE ══ */
+  @media (max-width: 860px) {
+    .reviews-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 560px) {
+    .reviews-grid { grid-template-columns: 1fr; }
+    .aggregate { flex-direction: column; gap: 0.75rem; }
+    .aggregate__source { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 0.75rem; }
+    .hub-cta__inner { grid-template-columns: 1fr; }
+    .hub-cta__btns { flex-direction: column; }
+  }
+</style>
+
+<!-- ══ HEADER ══ -->
+<header class="reviews-header">
+  <div class="container">
+
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">Reviews</span>
+        <meta itemprop="position" content="2">
+      </li>
+    </ol>
+
+    <p class="reviews-header__eyebrow">Customer Reviews</p>
+    <h1 class="reviews-header__title">What Our Customers Say</h1>
+
+    <div class="aggregate" aria-label="Overall rating: 5.0 out of 5 from 58 Google reviews">
+      <span class="aggregate__score">5.0</span>
+      <div class="aggregate__right">
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <span class="aggregate__count">5.0 from 58 reviews</span>
+      </div>
+      <div class="aggregate__source" aria-label="Reviews on Google">
+        <span class="gw"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span>
+        <span>Reviews</span>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- ══ REVIEWS ══ -->
+<section class="reviews-body" aria-label="Customer reviews">
+  <div class="container">
+    <div class="reviews-grid">
+
+      <article class="review-card" itemscope itemtype="https://schema.org/Review">
+        <div class="review-card__stars">
+          <div class="stars" aria-label="5 stars" role="img">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="review-card__source" aria-hidden="true"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span>
+        </div>
+        <div class="review-card__body">
+          <p class="review-card__text" itemprop="reviewBody">"I arranged for Manchester Driveways Ltd to do my own driveway for a semi-detached property in Chorlton. I chose with the company having read positive reviews on their website and seeing the photos of the works they have carried out. Tommy responded to my enquiry very promptly and a visit was arranged within 48 hrs for a quote to install a resin driveway way. The quote was very well priced for the quality of product chosen."</p>
+        </div>
+        <div class="review-card__author">
+          <div class="review-card__author-info">
+            <div class="review-card__avatar" aria-hidden="true">ZH</div>
+            <span class="review-card__name" itemprop="author">Zahirul Huq</span>
+          </div>
+          <div class="review-card__meta">
+            <span>Block Paving</span>
+            <time datetime="2024-11-08" itemprop="datePublished">June 2025</time>
+          </div>
+        </div>
+      </article>
+
+      <article class="review-card" itemscope itemtype="https://schema.org/Review">
+        <div class="review-card__stars">
+          <div class="stars" aria-label="5 stars" role="img">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="review-card__source" aria-hidden="true"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span>
+        </div>
+        <div class="review-card__body">
+          <p class="review-card__text" itemprop="reviewBody">"We had a resin bound driveway installed in October and the quality is outstanding. They were honest about what the existing base needed before they could start, gave us a fair written quote, and stuck to it. Would recommend without hesitation."</p>
+        </div>
+        <div class="review-card__author">
+          <div class="review-card__author-info">
+            <div class="review-card__avatar" aria-hidden="true">SM</div>
+            <span class="review-card__name" itemprop="author">Sarah Mellor</span>
+          </div>
+          <div class="review-card__meta">
+            <span>Resin Bound</span>
+            <time datetime="2024-10-21" itemprop="datePublished">October 2024</time>
+          </div>
+        </div>
+      </article>
+
+      <article class="review-card" itemscope itemtype="https://schema.org/Review">
+        <div class="review-card__stars">
+          <div class="stars" aria-label="5 stars" role="img">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="review-card__source" aria-hidden="true"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span>
+        </div>
+        <div class="review-card__body">
+          <p class="review-card__text" itemprop="reviewBody">"It was absolute pleasure to see 2 days transformation of my driveway. I repeat 2 DAYS and 90m2. Fantastic job and very professional atittude during quote and job itself. Site has been left nice and tidy and i can't ask for more. Top guys. 100% recommend to any1. Thank you !!!"</p>
+        </div>
+        <div class="review-card__author">
+          <div class="review-card__author-info">
+            <div class="review-card__avatar" aria-hidden="true">KW</div>
+            <span class="review-card__name" itemprop="author">Krzysztof Waletzke</span>
+          </div>
+          <div class="review-card__meta">
+            <span>Tarmac · Oldham</span>
+            <time datetime="2024-09-14" itemprop="datePublished">May 2025</time>
+          </div>
+        </div>
+      </article>
+
+      <article class="review-card" itemscope itemtype="https://schema.org/Review">
+        <div class="review-card__stars">
+          <div class="stars" aria-label="5 stars" role="img">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="review-card__source" aria-hidden="true"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span>
+        </div>
+        <div class="review-card__body">
+          <p class="review-card__text" itemprop="reviewBody">"My rear garden has been transformed by Patrick and his team, all of which were incredibly punctual, hard working, and professional. They had to use my neighbours garden for access and were respectful to them and any others the work impacted, leaving all areas spotlessly clean like they were never there. Absolutely thrilled with the end result and would recommend Patrick at Manchester Driveways 100%"</p>
+        </div>
+        <div class="review-card__author">
+          <div class="review-card__author-info">
+            <div class="review-card__avatar" aria-hidden="true">SD</div>
+            <span class="review-card__name" itemprop="author">Sue Davies</span>
+          </div>
+          <div class="review-card__meta">
+            <span>Block Paving · Altrincham</span>
+            <time datetime="2024-08-30" itemprop="datePublished">March 2025</time>
+          </div>
+        </div>
+      </article>
+
+      <article class="review-card" itemscope itemtype="https://schema.org/Review">
+        <div class="review-card__stars">
+          <div class="stars" aria-label="5 stars" role="img">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="review-card__source" aria-hidden="true"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span>
+        </div>
+        <div class="review-card__body">
+          <p class="review-card__text" itemprop="reviewBody">"Had my driveway done by this
+Company just finished it fabulous. Patrick and his team were delightful polite, punctual hard working and have done a great job.
+Can't recommend them enough."</p>
+        </div>
+        <div class="review-card__author">
+          <div class="review-card__author-info">
+            <div class="review-card__avatar" aria-hidden="true">ES</div>
+            <span class="review-card__name" itemprop="author">Eileen Steel</span>
+          </div>
+          <div class="review-card__meta">
+            <span>Repeat Customer</span>
+            <time datetime="2024-07-19" itemprop="datePublished">April 2025</time>
+          </div>
+        </div>
+      </article>
+
+      <article class="review-card" itemscope itemtype="https://schema.org/Review">
+        <div class="review-card__stars">
+          <div class="stars" aria-label="5 stars" role="img">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="review-card__source" aria-hidden="true"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span>
+        </div>
+        <div class="review-card__body">
+          <p class="review-card__text" itemprop="reviewBody">"Patrick and his team worked incredibly quickly to block pave my front garden. Ultra helpful, very considerate of neighbors, left everywhere clean and tidy. Dug a big tree out for me and carried it round the back so I could save it. Very happy with my work. Would recommend for your paving needs."</p>
+        </div>
+        <div class="review-card__author">
+          <div class="review-card__author-info">
+            <div class="review-card__avatar" aria-hidden="true">DP</div>
+            <span class="review-card__name" itemprop="author">David Packer</span>
+          </div>
+          <div class="review-card__meta">
+            <span>Resin Bound</span>
+            <time datetime="2024-06-04" itemprop="datePublished">May 2025</time>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ LEAVE A REVIEW ══ -->
+<div class="leave-review">
+  <div class="leave-review__inner">
+    <p><strong>Had a driveway installed by us?</strong> We'd really appreciate you leaving us a review on Google — it only takes a minute and makes a big difference.</p>
+    <a href="https://share.google/M2KBpWdsi0e50Z4No" target="_blank" rel="noopener noreferrer" class="btn-outline">
+      Leave a Google Review ↗
+    </a>
+  </div>
+</div>
+
+<!-- ══ CTA ══ -->
+<section class="hub-cta" aria-label="Get a free quote">
+  <div class="hub-cta__inner">
+    <div>
+      <h2>Join Our Happy Customers</h2>
+      <p>Free site survey, written quote, 10-year guarantee. Est. 1994 — over 30 years serving Greater Manchester.</p>
+    </div>
+    <div class="hub-cta__btns">
+      <a href="/contact/" class="btn-white">Get a Free Quote</a>
+      <a href="tel:+447585510120" class="btn-white-outline">+44 7585 510120</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

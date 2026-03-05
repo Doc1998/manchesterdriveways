@@ -1,0 +1,614 @@
+---
+title: 'Driveways Greater Manchester | All Locations & Services'
+description: 'Driveway installation across Greater Manchester — block paving, resin bound, tarmac and more. Find your local area page.'
+preloadImg: '/assets/images/hero.webp'
+permalink: '/location-hub'
+tags: 'sitemap' # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
+eleventyNavigation:
+  key: Home
+  order: 100
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+   
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue:         #1a56db;
+    --blue-dark:    #1e429f;
+    --blue-pale:    #eef2fd;
+    --white:        #ffffff;
+    --cream:        #faf8f4;
+    --stone:        #f0ece4;
+    --stone-2:      #e2dbd0;
+    --dark:         #111110;
+    --text:         #1c1a17;
+    --text-mid:     #56524d;
+    --text-light:   #8c8680;
+    --border:       #ddd8d0;
+    --border-light: #ece8e0;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body:    'Lora', serif;
+    --font-ui:      system-ui, sans-serif;
+    --container:    1080px;
+    --radius:       6px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); color: var(--text); background: var(--cream); }
+
+  .container {
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  /* ══ PAGE HEADER ══ */
+  .hub-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-light);
+    padding: 4rem 1.5rem 3.5rem;
+  }
+
+  .hub-header__inner {
+    max-width: var(--container);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: end;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    color: var(--text-light);
+    list-style: none;
+    margin-bottom: 1.5rem;
+    grid-column: 1 / -1;
+  }
+  .breadcrumb a { color: var(--text-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--blue); }
+  .breadcrumb li + li::before { content: '/'; margin-right: 0.4rem; color: var(--border); }
+
+  .hub-header__eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .hub-header__eyebrow::before { content: ''; display: block; width: 20px; height: 2px; background: var(--blue); }
+
+  .hub-header__title {
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 6vw, 5.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.88;
+    letter-spacing: -0.025em;
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+
+  .hub-header__desc {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-mid);
+    max-width: 560px;
+  }
+
+  /* Trust badges */
+  .hub-header__trust {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+    flex-shrink: 0;
+  }
+
+  .trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-mid);
+    white-space: nowrap;
+  }
+
+  .trust-badge svg { width: 13px; height: 13px; color: var(--blue); }
+
+  /* ══ BODY ══ */
+  .hub-body { padding-block: 4rem; }
+
+  /* ── Section heading ── */
+  .hub-section { margin-bottom: 3.5rem; }
+
+  .hub-section__heading {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    letter-spacing: -0.01em;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hub-section__heading span {
+    font-family: var(--font-ui);
+    font-size: 0.62rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    font-weight: 700;
+  }
+
+  /* ── Location card grid ── */
+  .location-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border-light);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .loc-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: background 0.15s;
+    position: relative;
+  }
+
+  .loc-card:hover { background: var(--blue-pale); }
+
+  .loc-card:hover .loc-card__arrow { transform: translateX(3px); color: var(--blue); }
+
+  .loc-card__area {
+    font-family: var(--font-ui);
+    font-size: 0.62rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--blue);
+    margin-bottom: 0.3rem;
+  }
+
+  .loc-card__title {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .loc-card__desc {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: var(--text-mid);
+    flex: 1;
+  }
+
+  .loc-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .loc-card__postcodes {
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--text-light);
+  }
+
+  .loc-card__arrow {
+    color: var(--text-light);
+    transition: transform 0.2s, color 0.2s;
+    flex-shrink: 0;
+  }
+
+  /* ── Service link list (simpler rows) ── */
+  .service-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border-light);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .svc-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: var(--white);
+    padding: 1.1rem 1.25rem;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .svc-link:hover { background: var(--blue-pale); }
+  .svc-link:hover .svc-link__arrow { transform: translateX(3px); color: var(--blue); }
+
+  .svc-link__left { display: flex; flex-direction: column; gap: 0.15rem; }
+
+  .svc-link__label {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--dark);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .svc-link__sub {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    color: var(--text-light);
+    font-weight: 600;
+  }
+
+  .svc-link__arrow {
+    color: var(--text-light);
+    transition: transform 0.2s, color 0.2s;
+    flex-shrink: 0;
+  }
+
+  /* ── Other pages (single row) ── */
+  .other-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border-light);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .other-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    background: var(--white);
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .other-link:hover { background: var(--blue-pale); }
+  .other-link:hover svg { transform: translateX(3px); color: var(--blue); }
+
+  .other-link span {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  .other-link svg {
+    color: var(--text-light);
+    transition: transform 0.2s, color 0.2s;
+    flex-shrink: 0;
+    width: 14px; height: 14px;
+  }
+
+  /* ══ CTA ══ */
+  .hub-cta {
+    background: var(--blue);
+    padding-block: 4rem;
+    margin-top: 1rem;
+  }
+
+  .hub-cta__inner {
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .hub-cta h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+
+  .hub-cta p { font-family: var(--font-body); font-size: 0.97rem; color: rgba(255,255,255,0.75); }
+
+  .hub-cta__btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+  .btn-white {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--white); color: var(--blue-dark);
+    font-family: var(--font-ui); font-size: 0.85rem; font-weight: 800;
+    letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;
+    padding: 0.9rem 1.5rem; border-radius: var(--radius);
+    transition: background 0.2s;
+  }
+  .btn-white:hover { background: var(--cream); }
+
+  .btn-white-outline {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent; color: var(--white);
+    font-family: var(--font-ui); font-size: 0.85rem; font-weight: 700;
+    text-decoration: none; padding: 0.9rem 1.35rem; border-radius: var(--radius);
+    border: 2px solid rgba(255,255,255,0.4); transition: border-color 0.2s;
+  }
+  .btn-white-outline:hover { border-color: var(--white); }
+
+  /* ══ RESPONSIVE ══ */
+  @media (max-width: 860px) {
+    .hub-header__inner { grid-template-columns: 1fr; }
+    .hub-header__trust { flex-direction: row; align-items: center; flex-wrap: wrap; }
+    .location-grid     { grid-template-columns: 1fr 1fr; }
+    .other-list        { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 560px) {
+    .location-grid { grid-template-columns: 1fr; }
+    .service-list  { grid-template-columns: 1fr; }
+    .other-list    { grid-template-columns: 1fr 1fr; }
+    .hub-cta__inner { grid-template-columns: 1fr; }
+    .hub-cta__btns  { flex-direction: column; }
+  }
+</style>
+
+<!-- ══ HEADER ══ -->
+<header class="hub-header">
+  <div class="hub-header__inner">
+
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">Driveways Greater Manchester</span>
+        <meta itemprop="position" content="2">
+      </li>
+    </ol>
+
+    <div>
+      <p class="hub-header__eyebrow">All Locations &amp; Services</p>
+      <h1 class="hub-header__title">Driveways<br>Greater Manchester</h1>
+      <p class="hub-header__desc">Block paving, resin bound, tarmac and pattern imprinted concrete across Greater Manchester. Find your local area below or call for a free quote.</p>
+    </div>
+
+    <div class="hub-header__trust">
+      <span class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        10-Year Guarantee
+      </span>
+      <span class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Free Site Survey
+      </span>
+      <span class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Est. 1994 — 30+ Years
+      </span>
+    </div>
+
+  </div>
+</header>
+
+<!-- ══ BODY ══ -->
+<div class="hub-body">
+  <div class="container">
+
+    <!-- LOCATION PAGES -->
+    <section class="hub-section" aria-labelledby="locations-heading">
+      <h2 class="hub-section__heading" id="locations-heading">
+        Driveway Installation by Location
+        <span>12 areas covered</span>
+      </h2>
+
+      <div class="location-grid">
+
+        <a class="loc-card" href="/">
+          <span class="loc-card__area">City &amp; Salford</span>
+          <span class="loc-card__title">Manchester</span>
+          <span class="loc-card__desc">Block paving, resin, tarmac and PIC across all Manchester postcodes.</span>
+          <div class="loc-card__footer">
+            <span class="loc-card__postcodes">M1–M16, M20–M23</span>
+            <svg class="loc-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+        <a class="loc-card" href="/driveways-stockport/">
+          <span class="loc-card__area">Stockport</span>
+          <span class="loc-card__title">Stockport</span>
+          <span class="loc-card__desc">Driveways across Stockport, Cheadle, Bramhall, Hazel Grove and Marple.</span>
+          <div class="loc-card__footer">
+            <span class="loc-card__postcodes">SK1–SK7, SK12</span>
+            <svg class="loc-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+        <a class="loc-card" href="/driveways-oldham/">
+          <span class="loc-card__area">Oldham</span>
+          <span class="loc-card__title">Oldham</span>
+          <span class="loc-card__desc">Block paving and resin driveways across Oldham, Royton, Shaw and Chadderton.</span>
+          <div class="loc-card__footer">
+            <span class="loc-card__postcodes">OL1–OL4, OL8–OL9</span>
+            <svg class="loc-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+        <a class="loc-card" href="/driveways-altrincham/">
+          <span class="loc-card__area">Trafford</span>
+          <span class="loc-card__title">Altrincham</span>
+          <span class="loc-card__desc">Premium driveways across Altrincham, Hale, Bowdon, Sale and Timperley.</span>
+          <div class="loc-card__footer">
+            <span class="loc-card__postcodes">WA14, WA15, M33</span>
+            <svg class="loc-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+        <a class="loc-card" href="/driveways-ashton-under-lyne/">
+          <span class="loc-card__area">Tameside</span>
+          <span class="loc-card__title">Ashton-under-Lyne</span>
+          <span class="loc-card__desc">Driveways across Ashton, Stalybridge, Dukinfield, Mossley and Droylsden.</span>
+          <div class="loc-card__footer">
+            <span class="loc-card__postcodes">OL6, OL7, SK15, SK16</span>
+            <svg class="loc-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- SURFACE-SPECIFIC PAGES -->
+    <section class="hub-section" aria-labelledby="services-heading">
+      <h2 class="hub-section__heading" id="services-heading">
+        By Surface Type
+        <span>Specialist pages</span>
+      </h2>
+
+      <div class="service-list">
+
+        <a class="svc-link" href="/block-paving-manchester">
+          <div class="svc-link__left">
+            <span class="svc-link__label">Block Paving Manchester</span>
+            <span class="svc-link__sub">Herringbone, feature circles, tumbled clay &amp; concrete blocks</span>
+          </div>
+          <svg class="svc-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <a class="svc-link" href="/block-paving-stockport/">
+          <div class="svc-link__left">
+            <span class="svc-link__label">Block Paving Stockport</span>
+            <span class="svc-link__sub">Block paving specialists across SK postcodes</span>
+          </div>
+          <svg class="svc-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <a class="svc-link" href="/resin-bound-driveways-manchester/">
+          <div class="svc-link__left">
+            <span class="svc-link__label">Resin Driveways Manchester</span>
+            <span class="svc-link__sub">Resin bound &amp; bonded — fully permeable, no planning needed</span>
+          </div>
+          <svg class="svc-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <a class="svc-link" href="/resin-bound-driveways-stockport/">
+          <div class="svc-link__left">
+            <span class="svc-link__label">Resin Driveways Stockport</span>
+            <span class="svc-link__sub">Resin specialists across Stockport and Cheshire border</span>
+          </div>
+          <svg class="svc-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <a class="svc-link" href="/resin-bound-driveways-oldham/">
+          <div class="svc-link__left">
+            <span class="svc-link__label">Resin Driveways Oldham</span>
+            <span class="svc-link__sub">Resin bound across Oldham, Saddleworth and OL postcodes</span>
+          </div>
+          <svg class="svc-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <a class="svc-link" href="/resin-bound-driveways-ashton-under-lyne/">
+          <div class="svc-link__left">
+            <span class="svc-link__label">Resin Driveways Ashton</span>
+            <span class="svc-link__sub">Resin bound &amp; bonded across Tameside</span>
+          </div>
+          <svg class="svc-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- OTHER PAGES -->
+    <section class="hub-section" aria-labelledby="other-heading">
+      <h2 class="hub-section__heading" id="other-heading">
+        Other Pages
+      </h2>
+
+      <div class="other-list">
+
+        <a class="other-link" href="/about/">
+          <span>About Us</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <a class="other-link" href="/gallery/">
+          <span>Gallery</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <a class="other-link" href="/driveway-cost-manchester/">
+          <span>Driveway Cost Guide</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <a class="other-link" href="/contact/">
+          <span>Get a Free Quote</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- ══ CTA ══ -->
+<section class="hub-cta" aria-label="Get a free quote">
+  <div class="hub-cta__inner">
+    <div>
+      <h2>Free Quote — Any Area, Any Surface</h2>
+      <p>Free site survey, written quote, 10-year guarantee. Est. 1994 — over 30 years serving Greater Manchester.</p>
+    </div>
+    <div class="hub-cta__btns">
+      <a href="/contact/" class="btn-white">Get a Free Quote</a>
+      <a href="tel:+447585510120" class="btn-white-outline">+44 7585 510120</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

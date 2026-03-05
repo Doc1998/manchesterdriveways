@@ -1502,3 +1502,179 @@
       gap: 0.75rem;
     }
   }
+   .article-preview {
+    background: var(--white, #ffffff);
+    border: 1.5px solid var(--border-light, #ece8e0);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 680px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: system-ui, sans-serif;
+  }
+
+  .article-preview:hover {
+    border-color: var(--blue, #1a56db);
+    box-shadow: 0 6px 24px rgba(26, 86, 219, 0.09);
+  }
+
+  .article-preview__img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center 60%;
+    display: block;
+  }
+
+  .article-preview__body {
+    padding: 1.5rem;
+  }
+
+  .article-preview__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .article-preview__tag {
+    background: var(--blue, #1a56db);
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+  }
+
+  .article-preview__date {
+    font-size: 0.72rem;
+    color: var(--text-light, #8c8680);
+  }
+
+  .article-preview__read-time {
+    font-size: 0.72rem;
+    color: var(--text-light, #8c8680);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .article-preview__read-time svg {
+    width: 11px;
+    height: 11px;
+    color: var(--blue, #1a56db);
+  }
+
+  .article-preview__title {
+    font-family: 'Barlow Condensed', system-ui, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--dark, #111110);
+    margin-bottom: 0.75rem;
+    text-decoration: none;
+    display: block;
+    transition: color 0.2s;
+  }
+
+  .article-preview__title:hover {
+    color: var(--blue, #1a56db);
+  }
+
+  .article-preview__excerpt {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: var(--text-mid, #56524d);
+    margin-bottom: 1.25rem;
+  }
+
+  /* Cost pills row */
+  .article-preview__costs {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+  }
+
+  .cost-pill {
+    display: flex;
+    flex-direction: column;
+    background: var(--stone, #f0ece4);
+    border: 1px solid var(--border, #ddd8d0);
+    border-radius: 5px;
+    padding: 0.3rem 0.65rem;
+    gap: 0.05rem;
+  }
+
+  .cost-pill__surface {
+    font-size: 0.58rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light, #8c8680);
+  }
+
+  .cost-pill__price {
+    font-family: 'Barlow Condensed', system-ui, sans-serif;
+    font-size: 0.88rem;
+    font-weight: 900;
+    color: var(--blue, #1a56db);
+    letter-spacing: -0.01em;
+  }
+
+  .article-preview__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--border-light, #ece8e0);
+  }
+
+  .article-preview__byline {
+    font-size: 0.72rem;
+    color: var(--text-light, #8c8680);
+  }
+
+  .article-preview__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--blue, #1a56db);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    padding: 0.55rem 1.1rem;
+    border-radius: 5px;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .article-preview__link:hover {
+    background: var(--blue-dark, #1e429f);
+  }
+
+  .article-preview__link svg {
+    width: 13px;
+    height: 13px;
+    transition: transform 0.2s;
+  }
+
+  .article-preview:hover .article-preview__link svg {
+    transform: translateX(2px);
+  }
+
+  @media (max-width: 480px) {
+    .article-preview__title { font-size: 1.35rem; }
+    .article-preview__body  { padding: 1.25rem; }
+    .article-preview__footer { flex-direction: column; align-items: flex-start; }
+    .article-preview__link  { width: 100%; justify-content: center; }
+  }
