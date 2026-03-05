@@ -872,22 +872,47 @@ permalink: '/driveway-cost-manchester/'
       padding-top: 2.5rem;
     }
     .article-sidebar { position: static; }
-    /* Move sidebar above body on mobile */
     .article-sidebar { order: -1; }
-    /* Collapse ToC on mobile — show only quick costs + CTA */
     .toc { display: none; }
     .article-hero__img { height: 240px; border-radius: 0; }
+
+    /* Prevent body copy max-width overflowing narrow viewports */
+    .article-body p,
+    .pull-quote,
+    .tip-box,
+    .warning-box,
+    .inline-cta,
+    .factor-list,
+    .cost-table-wrap { max-width: 100%; }
   }
 
   @media (max-width: 600px) {
     .article-hero { padding: 2.5rem 1.25rem 0; }
-    .article-hero__title { font-size: 2.5rem; }
-    .article-hero__img { height: 200px; }
-    .article-wrap { padding: 2rem 1.25rem 4rem; }
-    .cost-table-wrap { font-size: 0.8rem; }
+    .article-hero__title { font-size: 2rem; }
+    .article-hero__intro { font-size: 1rem; }
+    .article-hero__img { height: 180px; }
+    .article-wrap { padding: 2rem 1rem 4rem; }
+
+    /* Stop text overflowing viewport edge */
+    .article-body { overflow-wrap: break-word; word-break: break-word; min-width: 0; }
+    .article-body h2 { font-size: 1.6rem; }
+    .article-body h3 { font-size: 1.1rem; }
+
+    /* Tables: horizontal scroll, never overflow */
+    .cost-table-wrap { font-size: 0.78rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .cost-table { min-width: 480px; }
+
+    /* Quick costs: stack so price is never pushed off-screen */
+    .quick-costs__list li { flex-direction: column; align-items: flex-start; gap: 0.1rem; }
+    .qc-price { font-size: 0.95rem; }
+
     .inline-cta { flex-direction: column; align-items: flex-start; }
+    .inline-cta a { width: 100%; justify-content: center; }
     .afc-inner { grid-template-columns: 1fr; }
-    .afc-btns { justify-content: flex-start; }
+    .afc-btns { justify-content: flex-start; flex-direction: column; }
+    .afc-btns a { width: 100%; justify-content: center; }
+    .pull-quote p { font-size: 1.2rem; }
+    .factor-list li { grid-template-columns: 22px 1fr; }
   }
 </style>
 
@@ -933,7 +958,7 @@ permalink: '/driveway-cost-manchester/'
 
     <img
       class="article-hero__img"
-      src="/assets/images/block-paving.jpg"
+      src="/images/blog/driveway-cost-manchester-hero.jpg"
       alt="Block paving driveway installation in Manchester"
       width="1080" height="360"
       loading="eager"
