@@ -1,0 +1,202 @@
+---
+title: 'Thank You | Manchester Driveways Ltd'
+description: 'Thank you for your enquiry — we will be in touch within 2 hours.'
+preloadImg: '/assets/images/patio.webp'
+permalink: 'thank-you/'
+---
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css">
+{% endblock %}
+
+{% block body %}
+<!-- Schema.org LocalBusiness — rendered in <head> via layout -->
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue:      #1a56db;
+    --blue-dark: #1e429f;
+    --blue-pale: #eef2fd;
+    --white:     #ffffff;
+    --cream:     #faf8f4;
+    --stone:     #f0ece4;
+    --dark:      #111110;
+    --text-mid:  #56524d;
+    --text-light:#8c8680;
+    --border:    #ddd8d0;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body:    'Lora', serif;
+    --font-ui:      system-ui, sans-serif;
+    --radius:    6px;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .ty-icon {
+    width: 64px; height: 64px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.75rem;
+    animation: pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  .ty-icon svg { width: 28px; height: 28px; color: var(--white); }
+
+  @keyframes pop {
+    from { opacity: 0; transform: scale(0.5); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .ty-eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.65rem;
+    animation: rise 0.4s ease 0.1s both;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -0.025em;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    animation: rise 0.4s ease 0.15s both;
+  }
+
+  .ty-message {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-mid);
+    max-width: 420px;
+    margin: 0 auto 2rem;
+    animation: rise 0.4s ease 0.2s both;
+  }
+
+  .ty-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1.25rem 1.75rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    margin-bottom: 2.25rem;
+    animation: rise 0.4s ease 0.25s both;
+  }
+
+  .ty-strip-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-mid);
+    white-space: nowrap;
+  }
+
+  .ty-strip-item svg { width: 13px; height: 13px; color: var(--blue); }
+
+  .ty-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: rise 0.4s ease 0.3s both;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--blue); color: var(--white);
+    font-family: var(--font-ui); font-size: 0.85rem; font-weight: 800;
+    letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;
+    padding: 0.85rem 1.5rem; border-radius: var(--radius);
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--blue-dark); }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: var(--font-ui); font-size: 0.82rem; font-weight: 700;
+    color: var(--text-mid); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--blue); }
+  .btn-ghost svg { width: 14px; height: 14px; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<div class="ty-icon" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 6 9 17 4 12"/>
+  </svg>
+</div>
+
+<p class="ty-eyebrow">Enquiry Received</p>
+<h1>Thank You</h1>
+
+<p class="ty-message">
+  We've received your enquiry and will be in touch
+  <strong>within 2 hours</strong> to arrange your free site survey.
+</p>
+
+<div class="ty-strip" role="list" aria-label="What happens next">
+  <span class="ty-strip-item" role="listitem">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    Reply within 2 hours
+  </span>
+  <span class="ty-strip-item" role="listitem">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    Free site survey
+  </span>
+  <span class="ty-strip-item" role="listitem">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+    Written quote, no obligation
+  </span>
+</div>
+
+<div class="ty-links">
+  <a href="/" class="btn-primary">Back to Home</a>
+  <a href="/gallery/" class="btn-ghost">
+    View our work
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+  </a>
+</div>
+{% endblock %}
