@@ -31,7 +31,8 @@
         <link rel="preload" as="image" href="/assets/svgs/logo-white.svg">
         <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
         <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
-
+                  <!-- Event snippet for Lp form submission RSA Manchester Driveways Ltd conversion page -->
+    
         <!-- Preload an image - tag not rendered if preloadImg is blank to stop console errors -->
         {% if preloadImg != '' %}
             <link rel="preload" as="image" href="{{ preloadImg }}"/>
@@ -1109,6 +1110,29 @@
   }
 }
         </style>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11099489397"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11099489397');
+</script>
+<script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-11099489397/pPhrCLWHvKAaEPWI06wp',
+      'event_callback': callback
+    });
+    return false;
+  }
+</script>
     </head>
     <body>
         <!--Screen reader skip main nav-->
